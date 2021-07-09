@@ -21,9 +21,9 @@ import SearchInput from 'components/SearchInput'
 import Select, { OptionProps } from 'components/Select/Select'
 import FarmCard, { FarmWithStakedValue } from './components/FarmCard/FarmCard'
 import Table from './components/FarmTable/FarmTable'
-import FarmTabButtons from './components/FarmTabButtons'
+// import FarmTabButtons from './components/FarmTabButtons'
 import { RowProps } from './components/FarmTable/Row'
-import ToggleView from './components/ToggleView/ToggleView'
+// import ToggleView from './components/ToggleView/ToggleView'
 import { DesktopColumnSchema, ViewMode } from './components/types'
 
 const ControlContainer = styled.div`
@@ -44,15 +44,15 @@ const ControlContainer = styled.div`
   }
 `
 
-const ToggleWrapper = styled.div`
-  display: flex;
-  align-items: center;
-  margin-left: 10px;
+// const ToggleWrapper = styled.div`
+//   display: flex;
+//   align-items: center;
+//   margin-left: 10px;
 
-  ${Text} {
-    margin-left: 8px;
-  }
-`
+//   ${Text} {
+//     margin-left: 8px;
+//   }
+// `
 
 const LabelWrapper = styled.div`
   > ${Text} {
@@ -72,26 +72,26 @@ const FilterContainer = styled.div`
   }
 `
 
-const ViewControls = styled.div`
-  flex-wrap: wrap;
-  justify-content: space-between;
-  display: flex;
-  align-items: center;
-  width: 100%;
+// const ViewControls = styled.div`
+//   flex-wrap: wrap;
+//   justify-content: space-between;
+//   display: flex;
+//   align-items: center;
+//   width: 100%;
 
-  > div {
-    padding: 8px 0px;
-  }
+//   > div {
+//     padding: 8px 0px;
+//   }
 
-  ${({ theme }) => theme.mediaQueries.sm} {
-    justify-content: flex-start;
-    width: auto;
+//   ${({ theme }) => theme.mediaQueries.sm} {
+//     justify-content: flex-start;
+//     width: auto;
 
-    > div {
-      padding: 0;
-    }
-  }
-`
+//     > div {
+//       padding: 0;
+//     }
+//   }
+// `
 
 const StyledImage = styled(Image)`
   margin-left: auto;
@@ -117,7 +117,7 @@ const Farms: React.FC = () => {
   const { data: farmsLP, userDataLoaded } = useFarms()
   const cakePrice = usePriceCakeBusd()
   const [query, setQuery] = useState('')
-  const [viewMode, setViewMode] = usePersistState(ViewMode.TABLE, { localStorageKey: 'pancake_farm_view' })
+  const [viewMode] = usePersistState(ViewMode.TABLE, { localStorageKey: 'pancake_farm_view' })
   const { account } = useWeb3React()
   const [sortOption, setSortOption] = useState('hot')
 

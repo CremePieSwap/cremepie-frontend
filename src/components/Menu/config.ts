@@ -5,7 +5,7 @@ const config: (t: ContextApi['t']) => MenuEntry[] = (t) => [
   {
     label: t('Home'),
     icon: 'HomeIcon',
-    href: '/',
+    href: 'http://212.47.235.97:9999/#/home',
   },
   {
     label: t('Trade'),
@@ -13,11 +13,11 @@ const config: (t: ContextApi['t']) => MenuEntry[] = (t) => [
     items: [
       {
         label: t('Exchange'),
-        href: 'https://exchange.pancakeswap.finance/#/swap',
+        href: 'http://212.47.235.97:9999/#/swap',
       },
       {
         label: t('Liquidity'),
-        href: 'https://exchange.pancakeswap.finance/#/pool',
+        href: 'http://212.47.235.97:9999/#/pool',
       },
       // {
       //   label: t('LP Migration'),

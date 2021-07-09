@@ -1,10 +1,10 @@
 import React from 'react'
 import styled from 'styled-components'
-import ApyButton from 'views/Farms/components/FarmCard/ApyButton'
+// import ApyButton from 'views/Farms/components/FarmCard/ApyButton'
 import { Address } from 'config/constants/types'
 import BigNumber from 'bignumber.js'
-import { BASE_ADD_LIQUIDITY_URL } from 'config'
-import getLiquidityUrlPathParts from 'utils/getLiquidityUrlPathParts'
+// import { BASE_ADD_LIQUIDITY_URL } from 'config'
+// import getLiquidityUrlPathParts from 'utils/getLiquidityUrlPathParts'
 import { Skeleton } from '@cremepie/uikit'
 
 export interface AprProps {
@@ -42,15 +42,15 @@ const AprWrapper = styled.div`
 
 const Apr: React.FC<AprProps> = ({
   value,
-  lpLabel,
-  tokenAddress,
-  quoteTokenAddress,
-  cakePrice,
+  // lpLabel,
+  // tokenAddress,
+  // quoteTokenAddress,
+  // cakePrice,
   originalValue,
-  hideButton = false,
+  // hideButton = false,
 }) => {
-  const liquidityUrlPathParts = getLiquidityUrlPathParts({ quoteTokenAddress, tokenAddress })
-  const addLiquidityUrl = `${BASE_ADD_LIQUIDITY_URL}/${liquidityUrlPathParts}`
+  // const liquidityUrlPathParts = getLiquidityUrlPathParts({ quoteTokenAddress, tokenAddress })
+  // const addLiquidityUrl = `${BASE_ADD_LIQUIDITY_URL}/${liquidityUrlPathParts}`
 
   return originalValue !== 0 ? (
     <Container>
