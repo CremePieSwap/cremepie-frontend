@@ -1,6 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
-import { Text, Flex, ChevronRightIcon, Box, BlockIcon, PrizeIcon } from '@pancakeswap/uikit'
+import { Text, Flex, ChevronRightIcon, Box, BlockIcon, PrizeIcon } from '@cremepie/uikit'
 import { dateOptions, timeOptions } from '../../helpers'
 
 interface FinishedRoundRowProps {

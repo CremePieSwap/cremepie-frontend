@@ -1,6 +1,6 @@
 import { createGlobalStyle } from 'styled-components'
 // eslint-disable-next-line import/no-unresolved
-import { PancakeTheme } from '@pancakeswap/uikit/dist/theme'
+import { PancakeTheme } from '@cremepie/uikit/dist/theme'
 
 import SFPro400 from './fonts/SF-Pro-Rounded-Thin.otf'
 import SFPro500 from './fonts/SF-Pro-Rounded-Medium.otf'

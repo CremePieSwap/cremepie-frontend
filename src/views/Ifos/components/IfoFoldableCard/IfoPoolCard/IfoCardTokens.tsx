@@ -11,7 +11,7 @@ import {
   Button,
   AutoRenewIcon,
   BunnyPlaceholderIcon,
-} from '@pancakeswap/uikit'
+} from '@cremepie/uikit'
 import { useWeb3React } from '@web3-react/core'
 import { Ifo, PoolIds } from 'config/constants/types'
 import { PublicIfoData, WalletIfoData } from 'views/Ifos/types'

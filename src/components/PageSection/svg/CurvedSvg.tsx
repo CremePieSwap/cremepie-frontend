@@ -1,6 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
-import { Svg, SvgProps, Box } from '@pancakeswap/uikit'
+import { Svg, SvgProps, Box } from '@cremepie/uikit'
 
 interface StyledSvgProps {
   svgFill?: string
