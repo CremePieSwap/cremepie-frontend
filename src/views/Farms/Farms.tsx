@@ -2,7 +2,7 @@ import React, { useEffect, useCallback, useState, useMemo, useRef } from 'react'
 import { Route, useRouteMatch, useLocation } from 'react-router-dom'
 import BigNumber from 'bignumber.js'
 import { useWeb3React } from '@web3-react/core'
-import { Image, Heading, RowType, Toggle, Text } from '@cremepie/uikit'
+import { Image, Heading, RowType, Text } from '@cremepie/uikit'
 import { ChainId } from '@pancakeswap/sdk'
 import styled from 'styled-components'
 import FlexLayout from 'components/Layout/Flex'
@@ -374,12 +374,18 @@ const Farms: React.FC = () => {
   }
 
   return (
-    <>
+    <div style={{
+      background: "url('/images/bg_farm.svg')",
+      backgroundSize: 'contain',
+      backgroundRepeat: 'no-repeat',
+      backgroundPosition: 'right',
+      backgroundAttachment: 'fixed'
+    }}>
       <PageHeader>
-        <Heading as="h1" scale="xxl" color="secondary" mb="24px">
+        <Heading as="h1" scale="xxl" color="primary" mb="24px">
           {t('Farms')}
         </Heading>
-        <Heading scale="lg" color="text">
+        <Heading scale="lg" color="primary">
           {t('Stake LP tokens to earn.')}
         </Heading>
       </PageHeader>
@@ -387,11 +393,6 @@ const Farms: React.FC = () => {
         <ControlContainer>
           <ViewControls>
             <ToggleView viewMode={viewMode} onToggle={(mode: ViewMode) => setViewMode(mode)} />
-            <ToggleWrapper>
-              <Toggle checked={stakedOnly} onChange={() => setStakedOnly(!stakedOnly)} scale="sm" />
-              <Text> {t('Staked only')}</Text>
-            </ToggleWrapper>
-            <FarmTabButtons hasStakeInFinishedFarms={stakedInactiveFarms.length > 0} />
           </ViewControls>
           <FilterContainer>
             <LabelWrapper>
@@ -432,7 +433,7 @@ const Farms: React.FC = () => {
         <div ref={loadMoreRef} />
         <StyledImage src="/images/decorations/3dpan.png" alt="Pancake illustration" width={120} height={103} />
       </Page>
-    </>
+    </div>
   )
 }
 
