@@ -7,9 +7,14 @@ import { useTranslation } from 'contexts/Localization'
 const StyledInput = styled(Input)`
   border-radius: 16px;
   margin-left: auto;
-  color: "#5B5A99";
-  &::placeholder {
-    color: "#5B5A99";
+  color: #5B5A99;
+  &::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+    color: #5B5A99;
+    opacity: 1; /* Firefox */
+  }
+  
+  &:-ms-input-placeholder { /* Internet Explorer 10-11 */
+    color: #5B5A99;
   }
 `
 

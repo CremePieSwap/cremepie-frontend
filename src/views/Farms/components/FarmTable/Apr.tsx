@@ -21,8 +21,8 @@ export interface AprProps {
 const Container = styled.div`
   display: flex;
   align-items: center;
-  color: ${({ theme }) => theme.colors.text};
-
+  color: ${({ theme }) => theme.colors.primary};
+  font-weight: 600;
   button {
     width: 20px;
     height: 20px;
@@ -57,15 +57,6 @@ const Apr: React.FC<AprProps> = ({
       {originalValue ? (
         <>
           <AprWrapper>{value}%</AprWrapper>
-          {!hideButton && (
-            <ApyButton
-              lpLabel={lpLabel}
-              cakePrice={cakePrice}
-              apr={originalValue}
-              displayApr={value}
-              addLiquidityUrl={addLiquidityUrl}
-            />
-          )}
         </>
       ) : (
         <AprWrapper>

@@ -32,7 +32,7 @@ const ControlContainer = styled.div`
   align-items: center;
   position: relative;
 
-  justify-content: space-between;
+  justify-content: flex-end;
   flex-direction: column;
   margin-bottom: 32px;
 
@@ -391,9 +391,9 @@ const Farms: React.FC = () => {
       </PageHeader>
       <Page>
         <ControlContainer>
-          <ViewControls>
+          {/* <ViewControls>
             <ToggleView viewMode={viewMode} onToggle={(mode: ViewMode) => setViewMode(mode)} />
-          </ViewControls>
+          </ViewControls> */}
           <FilterContainer>
             <LabelWrapper>
               <Text textTransform="uppercase">{t('Sort by')}</Text>

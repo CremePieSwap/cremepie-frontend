@@ -41,23 +41,24 @@ const HarvestAction: React.FunctionComponent<HarvestActionProps> = ({ pid, userD
   const { account } = useWeb3React()
 
   return (
-    <ActionContainer>
-      <ActionTitles>
-        <Text bold textTransform="uppercase" color="secondary" fontSize="12px" pr="4px">
-          CAKE
-        </Text>
-        <Text bold textTransform="uppercase" color="textSubtle" fontSize="12px">
-          {t('Earned')}
-        </Text>
-      </ActionTitles>
+    <ActionContainer className="harvest">
       <ActionContent>
         <div>
+          <ActionTitles>
+            <Text bold textTransform="uppercase" color="primary" fontSize="14px" pr="4px">
+              CAKE
+            </Text>
+            <Text bold color="text" fontSize="14px">
+              {t('Earned')}
+            </Text>
+          </ActionTitles>
           <Earned>{displayBalance}</Earned>
           {earningsBusd > 0 && (
             <Balance fontSize="12px" color="textSubtle" decimals={2} value={earningsBusd} unit=" USD" prefix="~" />
           )}
         </div>
         <Button
+          style={{height: '35px'}}
           disabled={earnings.eq(0) || pendingTx || !userDataReady}
           onClick={async () => {
             setPendingTx(true)

@@ -15,7 +15,7 @@ const MultiplierWrapper = styled.div`
   color: ${({ theme }) => theme.colors.text};
   width: 36px;
   text-align: right;
-  margin-right: 14px;
+  font-weight: 600;
 
   ${({ theme }) => theme.mediaQueries.lg} {
     text-align: left;
@@ -47,10 +47,10 @@ const Multiplier: React.FunctionComponent<MultiplierProps> = ({ multiplier }) =>
   return (
     <Container>
       <MultiplierWrapper>{displayMultiplier}</MultiplierWrapper>
-      <ReferenceElement ref={targetRef}>
+      {/* <ReferenceElement ref={targetRef}>
         <HelpIcon color="textSubtle" />
       </ReferenceElement>
-      {tooltipVisible && tooltip}
+      {tooltipVisible && tooltip} */}
     </Container>
   )
 }

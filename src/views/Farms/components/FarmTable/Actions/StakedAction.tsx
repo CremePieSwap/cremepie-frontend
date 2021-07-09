@@ -116,14 +116,14 @@ const Staked: React.FunctionComponent<StackedActionProps> = ({
     if (stakedBalance.gt(0)) {
       return (
         <ActionContainer>
-          <ActionTitles>
+          {/* <ActionTitles>
             <Text bold textTransform="uppercase" color="secondary" fontSize="12px" pr="4px">
               {lpSymbol}
             </Text>
             <Text bold textTransform="uppercase" color="textSubtle" fontSize="12px">
               {t('Staked')}
             </Text>
-          </ActionTitles>
+          </ActionTitles> */}
           <ActionContent>
             <div>
               <Earned>{displayBalance()}</Earned>
@@ -157,14 +157,14 @@ const Staked: React.FunctionComponent<StackedActionProps> = ({
 
     return (
       <ActionContainer>
-        <ActionTitles>
+        {/* <ActionTitles>
           <Text bold textTransform="uppercase" color="textSubtle" fontSize="12px" pr="4px">
             {t('Stake').toUpperCase()}
           </Text>
           <Text bold textTransform="uppercase" color="secondary" fontSize="12px">
             {lpSymbol}
           </Text>
-        </ActionTitles>
+        </ActionTitles> */}
         <ActionContent>
           <Button
             width="100%"
@@ -182,11 +182,11 @@ const Staked: React.FunctionComponent<StackedActionProps> = ({
   if (!userDataReady) {
     return (
       <ActionContainer>
-        <ActionTitles>
+        {/* <ActionTitles>
           <Text bold textTransform="uppercase" color="textSubtle" fontSize="12px">
             {t('Start Farming')}
           </Text>
-        </ActionTitles>
+        </ActionTitles> */}
         <ActionContent>
           <Skeleton width={180} marginBottom={28} marginTop={14} />
         </ActionContent>
@@ -196,14 +196,20 @@ const Staked: React.FunctionComponent<StackedActionProps> = ({
 
   return (
     <ActionContainer>
-      <ActionTitles>
+      {/* <ActionTitles>
         <Text bold textTransform="uppercase" color="textSubtle" fontSize="12px">
           {t('Enable Farm')}
         </Text>
-      </ActionTitles>
-      <ActionContent>
-        <Button width="100%" disabled={requestedApproval} onClick={handleApprove} variant="secondary">
-          {t('Enable')}
+      </ActionTitles> */}
+      <ActionContent style={{justifyContent: 'center'}}>
+        <Button width="70%" disabled={requestedApproval} onClick={handleApprove} variant="secondary"
+          style={{
+            background: '#50E2C2',
+            color: "#5B5A99",
+            height: '35px'
+          }}
+        >
+          {t('Enable Farm')}
         </Button>
       </ActionContent>
     </ActionContainer>

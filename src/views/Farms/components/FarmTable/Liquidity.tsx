@@ -16,7 +16,6 @@ const LiquidityWrapper = styled.div`
   min-width: 110px;
   font-weight: 600;
   text-align: right;
-  margin-right: 14px;
 
   ${({ theme }) => theme.mediaQueries.lg} {
     text-align: left;
@@ -45,12 +44,12 @@ const Liquidity: React.FunctionComponent<LiquidityProps> = ({ liquidity }) => {
   return (
     <Container>
       <LiquidityWrapper>
-        <Text>{displayLiquidity}</Text>
+        <Text bold>{displayLiquidity}</Text>
       </LiquidityWrapper>
-      <ReferenceElement ref={targetRef}>
+      {/* <ReferenceElement ref={targetRef}>
         <HelpIcon color="textSubtle" />
       </ReferenceElement>
-      {tooltipVisible && tooltip}
+      {tooltipVisible && tooltip} */}
     </Container>
   )
 }

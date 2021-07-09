@@ -1,7 +1,7 @@
 import React from 'react'
 import styled, { keyframes, css } from 'styled-components'
 import { useTranslation } from 'contexts/Localization'
-import { LinkExternal, Text } from '@cremepie/uikit'
+import { LinkExternal, Text, useMatchBreakpoints } from '@cremepie/uikit'
 import { FarmWithStakedValue } from 'views/Farms/components/FarmCard/FarmCard'
 import getLiquidityUrlPathParts from 'utils/getLiquidityUrlPathParts'
 import { getAddress } from 'utils/addressHelpers'
@@ -65,6 +65,7 @@ const Container = styled.div<{ expanded }>`
 
 const StyledLinkExternal = styled(LinkExternal)`
   font-weight: 400;
+  font-size: 14px;
 `
 
 const StakeContainer = styled.div`
@@ -152,37 +153,79 @@ const ActionPanel: React.FunctionComponent<ActionPanelProps> = ({
   const bsc = getBscScanAddressUrl(lpAddress)
   const info = `https://pancakeswap.info/pool/${lpAddress}`
 
-  return (
-    <Container expanded={expanded}>
-      <InfoContainer>
-        {isActive && (
-          <StakeContainer>
-            <StyledLinkExternal href={`https://exchange.pancakeswap.finance/#/add/${liquidityUrlPathParts}`}>
-              {t('Get %symbol%', { symbol: lpLabel })}
-            </StyledLinkExternal>
-          </StakeContainer>
-        )}
-        <StyledLinkExternal href={bsc}>{t('View Contract')}</StyledLinkExternal>
-        <StyledLinkExternal href={info}>{t('See Pair Info')}</StyledLinkExternal>
-        <TagsContainer>
+  const { isXl, isXs } = useMatchBreakpoints()
+
+  const isMobile = isXl === false;
+
+
+  if (!isMobile) {
+    return (
+      <Container expanded={expanded}>
+        <InfoContainer>
+          {isActive && (
+            <StakeContainer>
+              <StyledLinkExternal href={`https://exchange.pancakeswap.finance/#/add/${liquidityUrlPathParts}`}>
+                {t('Get %symbol%', { symbol: lpLabel })}
+              </StyledLinkExternal>
+            </StakeContainer>
+          )}
+          <StyledLinkExternal href={bsc}>{t('View Contract')}</StyledLinkExternal>
+          <StyledLinkExternal href={info}>{t('See Pair Info')}</StyledLinkExternal>
+          {/* <TagsContainer>
           {farm.isCommunity ? <CommunityTag /> : <CoreTag />}
           {dual ? <DualTag /> : null}
-        </TagsContainer>
-      </InfoContainer>
-      <ValueContainer>
-        <ValueWrapper>
-          <Text>{t('APR')}</Text>
-          <Apr {...apr} />
-        </ValueWrapper>
-        <ValueWrapper>
-          <Text>{t('Multiplier')}</Text>
-          <Multiplier {...multiplier} />
-        </ValueWrapper>
-        <ValueWrapper>
-          <Text>{t('Liquidity')}</Text>
-          <Liquidity {...liquidity} />
-        </ValueWrapper>
-      </ValueContainer>
+        </TagsContainer> */}
+        </InfoContainer>
+        <ValueContainer>
+          <ValueWrapper>
+            <Text>{t('APR')}</Text>
+            <Apr {...apr} />
+          </ValueWrapper>
+          <ValueWrapper>
+            <Text>{t('Multiplier')}</Text>
+            <Multiplier {...multiplier} />
+          </ValueWrapper>
+          <ValueWrapper>
+            <Text>{t('Liquidity')}</Text>
+            <Liquidity {...liquidity} />
+          </ValueWrapper>
+        </ValueContainer>
+        <ActionContainer>
+          <StakedAction {...farm} userDataReady={userDataReady} />
+          <HarvestAction {...farm} userDataReady={userDataReady} />
+        </ActionContainer>
+      </Container>
+    )
+  }
+  return (
+    <Container expanded={expanded}>
+      <div>
+        <ValueContainer>
+          <ValueWrapper>
+            <Text>{t('APR')}</Text>
+            <Apr {...apr} />
+          </ValueWrapper>
+          <ValueWrapper>
+            <Text>{t('Multiplier')}</Text>
+            <Multiplier {...multiplier} />
+          </ValueWrapper>
+          <ValueWrapper>
+            <Text>{t('Liquidity')}</Text>
+            <Liquidity {...liquidity} />
+          </ValueWrapper>
+        </ValueContainer>
+        <InfoContainer>
+          {isActive && (
+            <StakeContainer>
+              <StyledLinkExternal href={`https://exchange.pancakeswap.finance/#/add/${liquidityUrlPathParts}`}>
+                {t('Get %symbol%', { symbol: lpLabel })}
+              </StyledLinkExternal>
+            </StakeContainer>
+          )}
+          <StyledLinkExternal href={bsc}>{t('View Contract')}</StyledLinkExternal>
+          <StyledLinkExternal href={info}>{t('See Pair Info')}</StyledLinkExternal>
+        </InfoContainer>
+      </div>
       <ActionContainer>
         <HarvestAction {...farm} userDataReady={userDataReady} />
         <StakedAction {...farm} userDataReady={userDataReady} />

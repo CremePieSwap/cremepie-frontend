@@ -1910,10 +1910,10 @@
     buffer "^5.4.3"
     seedrandom "^3.0.5"
 
-"@cremepie/uikit@^0.1.14":
-  version "0.1.14"
-  resolved "https://registry.yarnpkg.com/@cremepie/uikit/-/uikit-0.1.14.tgz#1b619bcb4e4e302a9e5473231a17cf0b8a6b4e2f"
-  integrity sha512-OjtfAnQJ0Ggw7LHm6pCnPS2447vczj0nN7aWu4twktfTx4Y0hwp3WeYozPx6SzITAUP0Gp7ec3SNnI2f7qmEUQ==
+"@cremepie/uikit@^0.1.17":
+  version "0.1.17"
+  resolved "https://registry.yarnpkg.com/@cremepie/uikit/-/uikit-0.1.17.tgz#192424f523454e6263f30b83ab2478671e9a2a4e"
+  integrity sha512-uShalvmMXuqlPMC6zQyKU06StmKuxD7Gg4EV2HqpgErEjyHunLTn6ByKQKZ2Lu0Siv41EEthIl0GV0Gdx+mu+w==
   dependencies:
     "@popperjs/core" "^2.9.2"
     "@types/lodash" "^4.14.168"

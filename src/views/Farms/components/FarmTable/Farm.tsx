@@ -55,7 +55,7 @@ const Farm: React.FunctionComponent<FarmProps> = ({ token, quoteToken, label, pi
       <TokenWrapper>
         <TokenPairImage variant="inverted" primaryToken={token} secondaryToken={quoteToken} width={40} height={40} />
       </TokenWrapper>
-      <div>
+      <div style={{marginLeft: 10}}>
         {handleRenderFarming()}
         <Text bold>{label}</Text>
       </div>
