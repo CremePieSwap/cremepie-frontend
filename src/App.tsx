@@ -16,7 +16,7 @@ import history from './routerHistory'
 
 // Route-based code splitting
 // Only pool is included in the main bundle because of it's the most visited page
-const Home = lazy(() => import('./views/Home'))
+// const Home = lazy(() => import('./views/Home'))
 const Farms = lazy(() => import('./views/Farms'))
 const Lottery = lazy(() => import('./views/Lottery'))
 const Ifos = lazy(() => import('./views/Ifos'))
@@ -53,7 +53,7 @@ const App: React.FC = () => {
             <Route path="/" exact>
               <Farms />
             </Route>
-            <Route path="/farms">
+            <Route path="/farms" exact>
               <Farms />
             </Route>
             <Route path="/pools">
