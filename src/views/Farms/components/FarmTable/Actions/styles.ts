@@ -6,7 +6,7 @@ export const ActionContainer = styled.div`
   flex-grow: 1;
   flex-basis: 0;
   &.harvest {
-    border: 2px solid ${({ theme }) => theme.colors.text};
+    border: 1px solid #59588D;
     padding: 16px 30px;
   }
 
