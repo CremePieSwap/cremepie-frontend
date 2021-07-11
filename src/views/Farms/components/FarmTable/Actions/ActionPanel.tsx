@@ -151,7 +151,7 @@ const ActionPanel: React.FunctionComponent<ActionPanelProps> = ({
   })
   const lpAddress = getAddress(farm.lpAddresses)
   const bsc = getBscScanAddressUrl(lpAddress)
-  const info = `https://pancakeswap.info/pool/${lpAddress}`
+  const info = `https://cremepieswap.info/pool/${lpAddress}`
 
   const { isXl } = useMatchBreakpoints()
 
@@ -164,7 +164,7 @@ const ActionPanel: React.FunctionComponent<ActionPanelProps> = ({
         <InfoContainer>
           {isActive && (
             <StakeContainer>
-              <StyledLinkExternal href={`https://exchange.pancakeswap.finance/#/add/${liquidityUrlPathParts}`}>
+              <StyledLinkExternal href={`https://exchange.cremepieswap.finance/#/add/${liquidityUrlPathParts}`}>
                 {t('Get %symbol%', { symbol: lpLabel })}
               </StyledLinkExternal>
             </StakeContainer>

@@ -12,14 +12,37 @@ const tokens = {
     decimals: 18,
     projectLink: 'https://pancakeswap.finance/',
   },
-  titan: {
-    symbol: 'TITAN',
+  dpie: {
+    symbol: 'DPIE',
     address: {
-      56: '0xe898EDc43920F357A93083F1d4460437dE6dAeC2',
-      97: '',
+      137: '0x44292d6dd3a00b9c0a80159a3ac0755dc037b525',
     },
     decimals: 18,
-    projectLink: 'https://titanswap.org',
+    projectLink: 'https://pancakeswap.finance/',
+  },
+  mhd: {
+    symbol: 'MHD',
+    address: {
+      137: '0x85c715fd61cfcdcd22a5286b60a68e99da929dad',
+    },
+    decimals: 18,
+    projectLink: 'https://pancakeswap.finance/',
+  },
+  uni: {
+    symbol: 'UNI',
+    address: {
+      137: '0x2704a1d4cd3f51a01e8ef9283e8a8ab84e432be4',
+    },
+    decimals: 18,
+    projectLink: 'https://pancakeswap.finance/',
+  },
+  wmatic: {
+    symbol: 'wMATIC',
+    address: {
+      137: '0x0d500b1d8e8ef31e21c99d1db9a6444d3adf1270',
+    },
+    decimals: 18,
+    projectLink: 'https://pancakeswap.finance/',
   },
   harmony: {
     symbol: 'ONE',
@@ -665,6 +688,7 @@ const tokens = {
     address: {
       56: '0x009cF7bC57584b7998236eff51b98A168DceA9B0',
       97: '0xfE1e507CeB712BDe086f3579d2c03248b2dB77f9',
+      137: '0xae2af68e963f714c28f7d3fb099078e7553f949a',
     },
     decimals: 18,
     projectLink: 'https://pancakeswap.finance/',
@@ -764,6 +788,7 @@ const tokens = {
     address: {
       56: '0x8AC76a51cc950d9822D68b83fE1Ad97B32Cd580d',
       97: '',
+      137: '0x2791bca1f2de4661ed88a30c99a7a9449aa84174'
     },
     decimals: 18,
     projectLink: 'https://www.centre.io/usdc',
@@ -894,15 +919,15 @@ const tokens = {
     decimals: 18,
     projectLink: 'https://yearn.finance/',
   },
-  uni: {
-    symbol: 'UNI',
-    address: {
-      56: '0xBf5140A22578168FD562DCcF235E5D43A02ce9B1',
-      97: '0xE02dF9e3e622DeBdD69fb838bB799E3F168902c5',
-    },
-    decimals: 18,
-    projectLink: 'https://uniswap.org/',
-  },
+  // uni: {
+  //   symbol: 'UNI',
+  //   address: {
+  //     56: '0xBf5140A22578168FD562DCcF235E5D43A02ce9B1',
+  //     97: '0xE02dF9e3e622DeBdD69fb838bB799E3F168902c5',
+  //   },
+  //   decimals: 18,
+  //   projectLink: 'https://uniswap.org/',
+  // },
   fil: {
     symbol: 'FIL',
     address: {
