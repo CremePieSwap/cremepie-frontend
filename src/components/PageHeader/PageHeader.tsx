@@ -5,11 +5,13 @@ import Container from '../Layout/Container'
 
 const Outer = styled(Box)<{ background?: string }>`
   // background: ${({ theme, background }) => background || theme.colors.gradients.bubblegum};
+  background: linear-gradient(247.99deg, #50E3C2 0%, #6F6C99 98.46%);
+  backdrop-filter: blur(0.3px);
 `
 
 const Inner = styled(Container)`
-  padding-top: 32px;
-  padding-bottom: 32px;
+  padding-top: 40px;
+  padding-bottom: 40px;
 `
 
 const PageHeader: React.FC<{ background?: string }> = ({ background, children, ...props }) => (

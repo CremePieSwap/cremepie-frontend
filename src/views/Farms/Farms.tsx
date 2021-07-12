@@ -374,18 +374,12 @@ const Farms: React.FC = () => {
   }
 
   return (
-    <div style={{
-      background: "url('/images/bg_farm.svg')",
-      backgroundSize: 'contain',
-      backgroundRepeat: 'no-repeat',
-      backgroundPosition: 'right',
-      backgroundAttachment: 'fixed'
-    }}>
+    <>
       <PageHeader>
-        <Heading as="h1" scale="xxl" color="primary" mb="24px">
+        <Heading as="h1" scale="xxl" mb="24px" style={{fontFamily: 'SFPro900', color: 'white'}}>
           {t('Farms')}
         </Heading>
-        <Heading scale="lg" color="primary">
+        <Heading scale="lg" style={{color: 'white'}}>
           {t('Stake LP tokens to earn.')}
         </Heading>
       </PageHeader>
@@ -433,7 +427,7 @@ const Farms: React.FC = () => {
         <div ref={loadMoreRef} />
         {/* <StyledImage src="/images/decorations/3dpan.png" alt="Pancake illustration" width={120} height={103} /> */}
       </Page>
-    </div>
+    </>
   )
 }
 

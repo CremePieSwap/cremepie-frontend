@@ -4,7 +4,7 @@ import { PancakeTheme } from '@cremepie/uikit/dist/theme'
 
 import SFPro400 from './fonts/SF-Pro-Rounded-Thin.otf'
 import SFPro500 from './fonts/SF-Pro-Rounded-Medium.otf'
-import SFPro900 from './fonts/SF-Pro-Rounded-Bold.otf'
+import SFPro900 from './fonts/SF-Pro-Rounded-Black.otf'
 
 declare module 'styled-components' {
   /* eslint-disable @typescript-eslint/no-empty-interface */
