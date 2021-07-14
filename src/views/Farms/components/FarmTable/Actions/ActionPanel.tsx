@@ -56,6 +56,7 @@ const Container = styled.div<{ expanded }>`
   width: 100%;
   flex-direction: column-reverse;
   padding: 24px;
+  align-items: center;
 
   ${({ theme }) => theme.mediaQueries.lg} {
     flex-direction: row;
@@ -164,13 +165,13 @@ const ActionPanel: React.FunctionComponent<ActionPanelProps> = ({
         <InfoContainer>
           {isActive && (
             <StakeContainer>
-              <StyledLinkExternal href={`https://exchange.cremepieswap.finance/#/add/${liquidityUrlPathParts}`}>
+              <StyledLinkExternal href={`https://swap.cremepieswap.finance/#/add/${liquidityUrlPathParts}`}>
                 {t('Get %symbol%', { symbol: lpLabel })}
               </StyledLinkExternal>
             </StakeContainer>
           )}
           <StyledLinkExternal href={bsc}>{t('View Contract')}</StyledLinkExternal>
-          <StyledLinkExternal href={info}>{t('See Pair Info')}</StyledLinkExternal>
+          {/* <StyledLinkExternal href={info}>{t('See Pair Info')}</StyledLinkExternal> */}
           {/* <TagsContainer>
           {farm.isCommunity ? <CommunityTag /> : <CoreTag />}
           {dual ? <DualTag /> : null}
@@ -199,7 +200,7 @@ const ActionPanel: React.FunctionComponent<ActionPanelProps> = ({
   }
   return (
     <Container expanded={expanded}>
-      <div>
+      <div style={{width: '100%'}}>
         <ValueContainer>
           <ValueWrapper>
             <Text>{t('APR')}</Text>
@@ -217,16 +218,16 @@ const ActionPanel: React.FunctionComponent<ActionPanelProps> = ({
         <InfoContainer>
           {isActive && (
             <StakeContainer>
-              <StyledLinkExternal href={`https://exchange.pancakeswap.finance/#/add/${liquidityUrlPathParts}`}>
+              <StyledLinkExternal href={`https://swap.pancakeswap.finance/#/add/${liquidityUrlPathParts}`}>
                 {t('Get %symbol%', { symbol: lpLabel })}
               </StyledLinkExternal>
             </StakeContainer>
           )}
           <StyledLinkExternal href={bsc}>{t('View Contract')}</StyledLinkExternal>
-          <StyledLinkExternal href={info}>{t('See Pair Info')}</StyledLinkExternal>
+          {/* <StyledLinkExternal href={info}>{t('See Pair Info')}</StyledLinkExternal> */}
         </InfoContainer>
       </div>
-      <ActionContainer>
+      <ActionContainer style={{width: '100%'}}>
         <HarvestAction {...farm} userDataReady={userDataReady} />
         <StakedAction {...farm} userDataReady={userDataReady} />
       </ActionContainer>

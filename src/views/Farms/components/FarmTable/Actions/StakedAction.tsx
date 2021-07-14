@@ -100,7 +100,7 @@ const Staked: React.FunctionComponent<StackedActionProps> = ({
   if (!account) {
     return (
       <ActionContainer>
-        <ActionTitles>
+        <ActionTitles style={{justifyContent: 'center'}}>
           <Text bold textTransform="uppercase" color="textSubtle" fontSize="12px">
             {t('Start Farming')}
           </Text>
@@ -116,15 +116,15 @@ const Staked: React.FunctionComponent<StackedActionProps> = ({
     if (stakedBalance.gt(0)) {
       return (
         <ActionContainer>
-          {/* <ActionTitles>
+          <ActionTitles style={{justifyContent: 'center'}}>
             <Text bold textTransform="uppercase" color="secondary" fontSize="12px" pr="4px">
               {lpSymbol}
             </Text>
             <Text bold textTransform="uppercase" color="textSubtle" fontSize="12px">
               {t('Staked')}
             </Text>
-          </ActionTitles> */}
-          <ActionContent>
+          </ActionTitles>
+          <ActionContent style={{justifyContent: 'center'}}>
             <div>
               <Earned>{displayBalance()}</Earned>
               {stakedBalance.gt(0) && lpPrice.gt(0) && (
@@ -157,20 +157,23 @@ const Staked: React.FunctionComponent<StackedActionProps> = ({
 
     return (
       <ActionContainer>
-        {/* <ActionTitles>
-          <Text bold textTransform="uppercase" color="textSubtle" fontSize="12px" pr="4px">
+        <ActionTitles style={{justifyContent: 'center'}}>
+          <Text bold textTransform="uppercase" color="primary" fontSize="12px" pr="4px">
             {t('Stake').toUpperCase()}
           </Text>
-          <Text bold textTransform="uppercase" color="secondary" fontSize="12px">
+          <Text bold textTransform="uppercase" color="text" fontSize="12px">
             {lpSymbol}
           </Text>
-        </ActionTitles> */}
-        <ActionContent>
+        </ActionTitles>
+        <ActionContent style={{justifyContent: 'center'}}>
           <Button
-            width="100%"
+            width="70%"
             onClick={onPresentDeposit}
             variant="secondary"
             disabled={['history', 'archived'].some((item) => location.pathname.includes(item))}
+            style={{
+              height: '35px'
+            }}
           >
             {t('Stake LP')}
           </Button>
@@ -182,11 +185,11 @@ const Staked: React.FunctionComponent<StackedActionProps> = ({
   if (!userDataReady) {
     return (
       <ActionContainer>
-        {/* <ActionTitles>
+        <ActionTitles style={{justifyContent: 'center'}}>
           <Text bold textTransform="uppercase" color="textSubtle" fontSize="12px">
             {t('Start Farming')}
           </Text>
-        </ActionTitles> */}
+        </ActionTitles>
         <ActionContent>
           <Skeleton width={180} marginBottom={28} marginTop={14} />
         </ActionContent>
@@ -196,7 +199,7 @@ const Staked: React.FunctionComponent<StackedActionProps> = ({
 
   return (
     <ActionContainer>
-      {/* <ActionTitles>
+      {/* <ActionTitles style={{justifyContent: 'center'}}>
         <Text bold textTransform="uppercase" color="textSubtle" fontSize="12px">
           {t('Enable Farm')}
         </Text>
