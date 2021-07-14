@@ -124,7 +124,7 @@ const Staked: React.FunctionComponent<StackedActionProps> = ({
               {t('Staked')}
             </Text>
           </ActionTitles>
-          <ActionContent style={{justifyContent: 'center'}}>
+          <ActionContent style={{justifyContent: 'space-around'}}>
             <div>
               <Earned>{displayBalance()}</Earned>
               {stakedBalance.gt(0) && lpPrice.gt(0) && (
