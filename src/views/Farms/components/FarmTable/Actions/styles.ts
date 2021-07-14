@@ -8,6 +8,9 @@ export const ActionContainer = styled.div`
   &.harvest {
     border: 1px solid #59588D;
     padding: 16px 30px;
+    @media (max-width: 500px) {
+      padding: 10px 20px;
+    }
   }
 
   ${({ theme }) => theme.mediaQueries.sm} {
