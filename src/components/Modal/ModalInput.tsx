@@ -42,7 +42,8 @@ const StyledInput = styled(Input)`
   padding: 0 8px;
 
   ${({ theme }) => theme.mediaQueries.xs} {
-    width: 80px;
+    width: 100px;
+    padding: 0 5px;
   }
 
   ${({ theme }) => theme.mediaQueries.sm} {
@@ -51,8 +52,7 @@ const StyledInput = styled(Input)`
 `
 
 const StyledErrorMessage = styled(Text)`
-  position: absolute;
-  bottom: -22px;
+  padding-top: 10px;
   a {
     display: inline;
   }
@@ -89,7 +89,7 @@ const ModalInput: React.FC<ModalInputProps> = ({
           <Text fontSize="14px">{inputTitle}</Text>
           <Text fontSize="14px">{t('Balance: %balance%', { balance: displayBalance(max) })}</Text>
         </Flex>
-        <Flex alignItems="flex-end" justifyContent="space-around">
+        <Flex alignItems="center" justifyContent="space-around">
           <StyledInput
             pattern={`^[0-9]*[.,]?[0-9]{0,${decimals}}$`}
             inputMode="decimal"
@@ -99,8 +99,15 @@ const ModalInput: React.FC<ModalInputProps> = ({
             placeholder="0"
             value={value}
           />
-          <Button scale="sm" onClick={onSelectMax} mr="8px">
-            {t('Max')}
+          <Button scale="sm" onClick={onSelectMax}
+            style={{
+              background: 'inherit',
+              color: '#50E3C2',
+              boxShadow: 'none',
+              padding: '0 10px'
+            }}
+          >
+            {t('MAX')}
           </Button>
           <Text fontSize="16px">{symbol}</Text>
         </Flex>
