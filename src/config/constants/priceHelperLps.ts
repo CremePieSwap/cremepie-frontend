@@ -10,7 +10,7 @@ const priceHelperLps: FarmConfig[] = [
    * Before storing to redux, farms without a PID are filtered out.
    */
   {
-    pid: 4,
+    pid: null,
     lpSymbol: 'USDC-MATIC LP',
     lpAddresses: {
       97: '',
