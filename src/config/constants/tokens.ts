@@ -12,6 +12,14 @@ const tokens = {
     decimals: 18,
     projectLink: 'https://pancakeswap.finance/',
   },
+  cpie: {
+    symbol: 'CPIE',
+    address: {
+      137: '0xfad70FD116559914240faB82b0078c4E82a6a1B8',
+    },
+    decimals: 18,
+    projectLink: 'https://pancakeswap.finance/',
+  },
   dpie: {
     symbol: 'DPIE',
     address: {
@@ -786,11 +794,9 @@ const tokens = {
   usdc: {
     symbol: 'USDC',
     address: {
-      56: '0x8AC76a51cc950d9822D68b83fE1Ad97B32Cd580d',
-      97: '',
       137: '0x2791bca1f2de4661ed88a30c99a7a9449aa84174'
     },
-    decimals: 18,
+    decimals: 6,
     projectLink: 'https://www.centre.io/usdc',
   },
   dai: {
@@ -850,10 +856,9 @@ const tokens = {
   usdt: {
     symbol: 'USDT',
     address: {
-      56: '0x55d398326f99059fF775485246999027B3197955',
-      97: '0xE02dF9e3e622DeBdD69fb838bB799E3F168902c5',
+      137: '0xc2132d05d31c914a87c6611c10748aeb04b58e8f',
     },
-    decimals: 18,
+    decimals: 6,
     projectLink: 'https://tether.to/',
   },
   btcb: {
