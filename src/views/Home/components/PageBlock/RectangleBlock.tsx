@@ -179,7 +179,15 @@ export default function RectangleBlock({
             <Title3>How to Buy <span className="highlight">$CPIE</span></Title3>
             <Title3>with <span className="highlight">CremePieSwap</span></Title3>
             <ButtonRow>
-              <Button>Discover</Button>
+              <Button>
+                <a 
+                  href="https://docs.cremepieswap.finance/instructions/how-to-trade-cpie-on-cremepieswap" 
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  Discover
+                </a>
+              </Button>
             </ButtonRow>
           </div>
         </Block>
@@ -188,7 +196,7 @@ export default function RectangleBlock({
       return (
         <Block className={`type-${type}`}>
           <Subtitle4>Total Value Locked (TVL)</Subtitle4>
-          <Title4>$6,785,701,307</Title4>
+          <Title4>$ -..</Title4>
           <Description4>Across all LPs and Cream Pool</Description4>
         </Block>
       )
