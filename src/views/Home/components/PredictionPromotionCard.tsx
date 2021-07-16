@@ -83,6 +83,8 @@ const PredictionPromotionCard = () => {
   const { observerRef, isIntersecting } = useIntersectionObserver()
   const [loadData, setLoadData] = useState(false)
   const bnbBusdPrice = usePriceBnbBusd()
+  console.error('aaaaa', bnbBusdPrice);
+  
   const [bnbWon, setBnbWon] = useState(0)
   const [bnbWonInUsd, setBnbWonInUsd] = useState(0)
 

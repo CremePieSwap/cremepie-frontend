@@ -62,6 +62,9 @@ const FarmTable: React.FC<ITableProps> = (props) => {
   const { t } = useTranslation()
   const { data, columns, userDataReady } = props
 
+  console.error('data', data);
+  
+
   const { rows } = useTable(columns, data, { sortable: true, sortColumn: 'farm' })
 
   const scrollToTop = (): void => {
