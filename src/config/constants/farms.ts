@@ -51,24 +51,24 @@ const farms: FarmConfig[] = [
   // },
   {
     pid: 1,
-    lpSymbol: 'CIPE-USDT LP',
+    lpSymbol: 'CPIE-USDT LP',
     lpAddresses: {
       97: '',
       56: '0x58F876857a02D6762E0101bb5C46A8c1ED44Dc16',
       137: '0x8DE0068ceA36C0bD1B10034f28Ba680C94a0954A',
     },
-    token: tokens.dpie,
-    quoteToken: tokens.wmatic,
+    token: tokens.cpie,
+    quoteToken: tokens.usdt,
   },
   {
     pid: 2,
-    lpSymbol: 'CIPE-USDC LP',
+    lpSymbol: 'CPIE-USDC LP',
     lpAddresses: {
       97: '',
       137: '0xa562Cf4e4AD052ef9798524Db77f73b50EaACDbE',
     },
-    token: tokens.usdc,
-    quoteToken: tokens.wmatic,
+    token: tokens.cpie,
+    quoteToken: tokens.usdc,
   },
   {
     pid: 3,
@@ -77,7 +77,17 @@ const farms: FarmConfig[] = [
       97: '',
       137: '0xAB1cBbD4c563E230f3114A456A56fd51B8cf8ffE',
     },
-    token: tokens.mhd,
+    token: tokens.cpie,
+    quoteToken: tokens.wmatic,
+  },
+  {
+    pid: 4,
+    lpSymbol: 'USDC-MATIC LP',
+    lpAddresses: {
+      97: '',
+      137: '0x6e7a5FAFcec6BB1e78bAE2A1F0B612012BF14827',
+    },
+    token: tokens.usdc,
     quoteToken: tokens.wmatic,
   },
   // *
