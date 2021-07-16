@@ -338,8 +338,6 @@ export const useAchievements = () => {
 
 export const usePriceBnbBusd = (): BigNumber => {
   const bnbBusdFarm = useFarmFromPid(4)
-  console.error('FUCKKKKKKKKKKKKKKKKK', bnbBusdFarm);
-  
   return new BigNumber(bnbBusdFarm.quoteToken.busdPrice)
 }
 
