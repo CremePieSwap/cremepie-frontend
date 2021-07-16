@@ -257,7 +257,7 @@ const Farms: React.FC = () => {
     }
   }, [farmsStakedMemoized, observerIsSet])
 
-  const rowData = farmsStakedMemoized.map((farm) => {
+  const rowData = farmsStakedMemoized.filter((f) => f.pid !== 4).map((farm) => {
     const { token, quoteToken } = farm
     const tokenAddress = token.address
     const quoteTokenAddress = quoteToken.address
