@@ -22,7 +22,7 @@ const farms: FarmConfig[] = [
     lpAddresses: {
       97: '0x9C21123D94b93361a29B2C2EFB3d5CD8B17e0A9e',
       56: '0x0e09fabb73bd3ade0a17ecc321fd13a19e81ce82',
-      137: '0x91562309d472065E297F4b7b5d30B002cd95a99F',
+      137: '0xfad70FD116559914240faB82b0078c4E82a6a1B8',
     },
     token: tokens.syrup,
     quoteToken: tokens.wmatic,
@@ -51,44 +51,34 @@ const farms: FarmConfig[] = [
   // },
   {
     pid: 1,
-    lpSymbol: 'DPIE-MATIC LP',
+    lpSymbol: 'CIPE-USDT LP',
     lpAddresses: {
       97: '',
       56: '0x58F876857a02D6762E0101bb5C46A8c1ED44Dc16',
-      137: '0x3e49d885166893b6050b4BA5c63217342c9e5237',
+      137: '0x8DE0068ceA36C0bD1B10034f28Ba680C94a0954A',
     },
     token: tokens.dpie,
     quoteToken: tokens.wmatic,
   },
   {
     pid: 2,
-    lpSymbol: 'MATIC-USDC LP',
+    lpSymbol: 'CIPE-USDC LP',
     lpAddresses: {
       97: '',
-      137: '0x6e7a5fafcec6bb1e78bae2a1f0b612012bf14827',
+      137: '0xa562Cf4e4AD052ef9798524Db77f73b50EaACDbE',
     },
     token: tokens.usdc,
     quoteToken: tokens.wmatic,
   },
   {
     pid: 3,
-    lpSymbol: 'MHD-MATIC LP',
+    lpSymbol: 'CPIE-MATIC LP',
     lpAddresses: {
       97: '',
-      137: '0x58f0a1f3b7ec8bca88c8424c4c66d0751883a86d',
+      137: '0xAB1cBbD4c563E230f3114A456A56fd51B8cf8ffE',
     },
     token: tokens.mhd,
     quoteToken: tokens.wmatic,
-  },
-  {
-    pid: 4,
-    lpSymbol: 'DPIE-UNI LP',
-    lpAddresses: {
-      97: '',
-      137: '0xaa95bf8912b3318fcc16bdf5200dfc0f8100c402',
-    },
-    token: tokens.dpie,
-    quoteToken: tokens.uni,
   },
   // *
   //  * V3 by order of release (some may be out of PID order due to multiplier boost)
