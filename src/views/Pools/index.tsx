@@ -221,7 +221,6 @@ const Pools: React.FC = () => {
           </Flex>
           <Flex flex="1" height="fit-content" justifyContent="center" alignItems="center" mt={['24px', null, '0']}>
             <HelpButton />
-            <BountyCard />
           </Flex>
         </Flex>
       </PageHeader>
