@@ -196,7 +196,7 @@ export default function RectangleBlock({
       return (
         <Block className={`type-${type}`}>
           <Subtitle4>Total Value Locked (TVL)</Subtitle4>
-          <Title4>$373.546</Title4>
+          <Title4>$424,029</Title4>
           <Description4>Across all LPs and Cream Pool</Description4>
         </Block>
       )
