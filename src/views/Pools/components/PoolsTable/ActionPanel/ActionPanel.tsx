@@ -240,7 +240,7 @@ const ActionPanel: React.FC<ActionPanelProps> = ({ account, pool, userDataLoaded
           </LinkExternal>
         </Flex> */}
         <Flex mb="8px" justifyContent={['flex-end', 'flex-end', 'flex-start']}>
-          <LinkExternal href={earningToken.projectLink} bold={false}>
+          <LinkExternal href={earningToken.projectLink} bold={false} style={{fontSize: 14}}>
             {t('View Project Site')}
           </LinkExternal>
         </Flex>
@@ -249,6 +249,7 @@ const ActionPanel: React.FC<ActionPanelProps> = ({ account, pool, userDataLoaded
             <LinkExternal
               href={`${BASE_BSC_SCAN_URL}/address/${isAutoVault ? cakeVaultContractAddress : poolContractAddress}`}
               bold={false}
+              style={{fontSize: 14}}
             >
               {t('View Contract')}
             </LinkExternal>
