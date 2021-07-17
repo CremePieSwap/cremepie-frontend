@@ -6,7 +6,7 @@ BigNumber.config({
   DECIMAL_PLACES: 80,
 })
 
-export const BSC_BLOCK_TIME = 3
+export const BSC_BLOCK_TIME = 2
 
 // CAKE_PER_BLOCK details
 // 40 CAKE is minted per block
@@ -16,7 +16,7 @@ export const BSC_BLOCK_TIME = 3
 // CAKE_PER_BLOCK in config/index.ts = 40 as we only change the amount sent to the burn pool which is effectively a farm.
 // CAKE/Block in src/views/Home/components/CakeStats.tsx = 19 (40 - Amount sent to burn pool)
 
-export const CAKE_PER_BLOCK = new BigNumber(40)
+export const CAKE_PER_BLOCK = new BigNumber(2000)
 export const BLOCKS_PER_YEAR = new BigNumber((60 / BSC_BLOCK_TIME) * 60 * 24 * 365) // 10512000
 export const CAKE_PER_YEAR = CAKE_PER_BLOCK.times(BLOCKS_PER_YEAR)
 export const BASE_URL = 'https://cremepieswap.finance'
