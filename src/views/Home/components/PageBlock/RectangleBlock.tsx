@@ -160,7 +160,7 @@ export default function RectangleBlock({
             {type === 1 ? 'Earn' : 'Earn up to'}
           </Subtitle>
           <Title color={titleColor}>
-            {type === 1 ? 'CPIE, 100xCoin, LZ...' : '358.27%'}
+            {type === 1 ? 'CPIE, 100xCoin, LZ...' : '7,689.87%'}
           </Title>
           <Subtitle color={subtitleColor}>
             {type === 1 ? 'In Pools' : 'APR in Farms'}
@@ -196,7 +196,7 @@ export default function RectangleBlock({
       return (
         <Block className={`type-${type}`}>
           <Subtitle4>Total Value Locked (TVL)</Subtitle4>
-          <Title4>$ -..</Title4>
+          <Title4>$424,029</Title4>
           <Description4>Across all LPs and Cream Pool</Description4>
         </Block>
       )
@@ -225,7 +225,7 @@ export default function RectangleBlock({
             {type === 1 ? 'Earn' : 'Earn up to'}
           </Subtitle>
           <Title color={titleColor}>
-            {type === 1 ? 'CPIE, 100xCoin, LZ...' : '358.27%'}
+            {type === 1 ? 'CPIE, 100xCoin, LZ...' : '7,689.87%'}
           </Title>
           <Subtitle color={subtitleColor}>
             {type === 1 ? 'In Pools' : 'APR in Farms'}
