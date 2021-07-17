@@ -167,7 +167,7 @@ const ExpandedFooter: React.FC<ExpandedFooterProps> = ({ pool, account }) => {
           </LinkExternal>
         </Flex>
       )}
-      {account && isMetaMaskInScope && tokenAddress && (
+      {/* {account && isMetaMaskInScope && tokenAddress && (
         <Flex justifyContent="flex-end">
           <Button
             variant="text"
@@ -181,7 +181,7 @@ const ExpandedFooter: React.FC<ExpandedFooterProps> = ({ pool, account }) => {
             <MetamaskIcon ml="4px" />
           </Button>
         </Flex>
-      )}
+      )} */}
     </ExpandedWrapper>
   )
 }

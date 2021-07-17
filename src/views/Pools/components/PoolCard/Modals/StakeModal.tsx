@@ -163,7 +163,7 @@ const StakeModal: React.FC<StakeModalProps> = ({
           })}
         </Text>
       )}
-      <Text ml="auto" color="textSubtle" fontSize="12px" mb="8px">
+      <Text ml="auto" color="text" fontSize="14px" mb="8px">
         {t('Balance: %balance%', {
           balance: getFullDisplayBalance(getCalculatedStakingLimit(), stakingToken.decimals),
         })}
@@ -189,6 +189,9 @@ const StakeModal: React.FC<StakeModalProps> = ({
         onClick={handleConfirmClick}
         disabled={!stakeAmount || parseFloat(stakeAmount) === 0 || hasReachedStakeLimit}
         mt="24px"
+        style={{
+          color: stakeAmount && parseFloat(stakeAmount) !== 0 && !hasReachedStakeLimit && "#5B5A99",
+        }}
       >
         {pendingTx ? t('Confirming') : t('Confirm')}
       </Button>
