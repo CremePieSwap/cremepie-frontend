@@ -42,6 +42,9 @@ const PoolsTable: React.FC<PoolsTableProps> = ({ pools, userDataLoaded, account 
       behavior: 'smooth',
     })
   }
+
+  console.error(pools);
+  
   return (
     <StyledTableBorder>
       <StyledTable role="table" ref={tableWrapperEl}>

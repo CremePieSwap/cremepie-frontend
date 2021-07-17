@@ -232,11 +232,11 @@ const ActionPanel: React.FC<ActionPanelProps> = ({ account, pool, userDataLoaded
         {(isXs || isSm) && aprRow}
         {(isXs || isSm || isMd) && totalStakedRow}
         {shouldShowBlockCountdown && blocksRow}
-        <Flex mb="8px" justifyContent={['flex-end', 'flex-end', 'flex-start']}>
+        {/* <Flex mb="8px" justifyContent={['flex-end', 'flex-end', 'flex-start']}>
           <LinkExternal href={`https://cremepieswap.info/token/${getAddress(earningToken.address)}`} bold={false}>
             {t('See Token Info')}
           </LinkExternal>
-        </Flex>
+        </Flex> */}
         <Flex mb="8px" justifyContent={['flex-end', 'flex-end', 'flex-start']}>
           <LinkExternal href={earningToken.projectLink} bold={false}>
             {t('View Project Site')}
@@ -277,8 +277,8 @@ const ActionPanel: React.FC<ActionPanelProps> = ({ account, pool, userDataLoaded
             {isAutoVault ? t('Automatic restaking') : `${t('Earn')} CPIE ${t('Stake').toLocaleLowerCase()} CPIE`}
           </Text>
         )}
-        <Harvest {...pool} userDataLoaded={userDataLoaded} />
         <Stake pool={pool} userDataLoaded={userDataLoaded} />
+        <Harvest {...pool} userDataLoaded={userDataLoaded} />
       </ActionContainer>
     </StyledActionPanel>
   )

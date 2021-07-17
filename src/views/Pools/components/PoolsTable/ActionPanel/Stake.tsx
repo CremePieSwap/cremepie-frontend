@@ -133,7 +133,7 @@ const Staked: React.FunctionComponent<StackedActionProps> = ({ pool, userDataLoa
 
   if (!account) {
     return (
-      <ActionContainer>
+      <ActionContainer style={{border: 'none'}}>
         <ActionTitles>
           <Text fontSize="12px" bold color="textSubtle" as="span" textTransform="uppercase">
             {t('Start staking')}
@@ -148,7 +148,7 @@ const Staked: React.FunctionComponent<StackedActionProps> = ({ pool, userDataLoa
 
   if (!userDataLoaded) {
     return (
-      <ActionContainer>
+      <ActionContainer style={{border: 'none'}}>
         <ActionTitles>
           <Text fontSize="12px" bold color="textSubtle" as="span" textTransform="uppercase">
             {t('Start staking')}
@@ -163,7 +163,7 @@ const Staked: React.FunctionComponent<StackedActionProps> = ({ pool, userDataLoa
 
   if (needsApproval) {
     return (
-      <ActionContainer>
+      <ActionContainer style={{border: 'none'}}>
         <ActionTitles>
           <Text fontSize="12px" bold color="textSubtle" as="span" textTransform="uppercase">
             {t('Enable pool')}
@@ -181,7 +181,7 @@ const Staked: React.FunctionComponent<StackedActionProps> = ({ pool, userDataLoa
   // Wallet connected, user data loaded and approved
   if (isNotVaultAndHasStake || isVaultWithShares) {
     return (
-      <ActionContainer>
+      <ActionContainer style={{border: 'none'}}>
         <ActionTitles>
           <Text fontSize="12px" bold color="secondary" as="span" textTransform="uppercase">
             {stakingToken.symbol}{' '}
@@ -236,7 +236,7 @@ const Staked: React.FunctionComponent<StackedActionProps> = ({ pool, userDataLoa
   }
 
   return (
-    <ActionContainer>
+    <ActionContainer style={{border: 'none'}}>
       <ActionTitles>
         <Text fontSize="12px" bold color="secondary" as="span" textTransform="uppercase">
           {t('Stake')}{' '}

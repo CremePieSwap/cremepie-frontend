@@ -77,8 +77,8 @@ const HarvestAction: React.FunctionComponent<HarvestActionProps> = ({
   )
 
   const actionTitle = isAutoVault ? (
-    <Text fontSize="12px" bold color="secondary" as="span" textTransform="uppercase">
-      {t('Recent CAKE profit')}
+    <Text fontSize="14px" bold color="primary" as="span" textTransform="uppercase">
+      {t('Recent CPIE profit')}
     </Text>
   ) : (
     <>
