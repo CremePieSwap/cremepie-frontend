@@ -277,7 +277,7 @@ const ActionPanel: React.FC<ActionPanelProps> = ({ account, pool, userDataLoaded
         isMobile ?
           <ActionContainer>
             {showSubtitle && (
-              <Text mt="4px" mb="16px" color="textSubtle">
+              <Text mt="4px" mb="16px" color="primary">
                 {isAutoVault ? t('Automatic restaking') : `${t('Earn')} CPIE ${t('Stake').toLocaleLowerCase()} CPIE`}
               </Text>
             )}
@@ -286,7 +286,7 @@ const ActionPanel: React.FC<ActionPanelProps> = ({ account, pool, userDataLoaded
           </ActionContainer> :
           <ActionContainer>
             {showSubtitle && (
-              <Text mt="4px" mb="16px" color="textSubtle">
+              <Text mt="4px" mb="16px" color="primary">
                 {isAutoVault ? t('Automatic restaking') : `${t('Earn')} CPIE ${t('Stake').toLocaleLowerCase()} CPIE`}
               </Text>
             )}
