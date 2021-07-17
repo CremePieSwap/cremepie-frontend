@@ -202,7 +202,7 @@ const Pools: React.FC = () => {
     </CardLayout>
   )
 
-  const tableLayout = <PoolsTable pools={poolsToShow()} account={account} userDataLoaded={userDataLoaded} />
+  const tableLayout = <PoolsTable pools={poolsToShow().filter((pool) => !pool.isAutoVault)} account={account} userDataLoaded={userDataLoaded} />
 
   return (
     <>
@@ -233,7 +233,7 @@ const Pools: React.FC = () => {
             viewMode={viewMode}
             setViewMode={setViewMode}
           /> */}
-          <SearchSortContainer>
+          {/* <SearchSortContainer>
             <Flex flexDirection="column" width="50%">
               <Text fontSize="12px" bold color="textSubtle" textTransform="uppercase">
                 {t('Sort by')}
@@ -270,7 +270,7 @@ const Pools: React.FC = () => {
                 <SearchInput onChange={handleChangeSearchQuery} placeholder="Search Pools" />
               </ControlStretch>
             </Flex>
-          </SearchSortContainer>
+          </SearchSortContainer> */}
         </PoolControls>
         {showFinishedPools && (
           <Text fontSize="20px" color="failure" pb="32px">

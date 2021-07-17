@@ -124,7 +124,7 @@ const ActionPanel: React.FC<ActionPanelProps> = ({ account, pool, userDataLoaded
   const poolContractAddress = getAddress(contractAddress)
   const cakeVaultContractAddress = getCakeVaultAddress()
   const { currentBlock } = useBlock()
-  const { isXs, isSm, isMd } = breakpoints
+  const { isXs, isSm, isMd, isXl } = breakpoints
   const showSubtitle = (isXs || isSm) && sousId === 0
 
   const { shouldShowBlockCountdown, blocksUntilStart, blocksRemaining, hasPoolStarted, blocksToDisplay } =
@@ -201,14 +201,14 @@ const ActionPanel: React.FC<ActionPanelProps> = ({ account, pool, userDataLoaded
 
   const aprRow = (
     <Flex justifyContent="space-between" alignItems="center" mb="8px">
-      <Text>{isAutoVault ? t('APY') : t('APR')}:</Text>
+      <Text fontSize="14px" color="text">{isAutoVault ? t('APY') : t('APR')}:</Text>
       <Apr pool={pool} showIcon performanceFee={isAutoVault ? performanceFeeAsDecimal : 0} />
     </Flex>
   )
 
   const totalStakedRow = (
     <Flex justifyContent="space-between" alignItems="center" mb="8px">
-      <Text maxWidth={['50px', '100%']}>{t('Total staked')}:</Text>
+      <Text fontSize="14px" color="text" maxWidth={['50px', '100%']}>{t('Total staked')}:</Text>
       <Flex alignItems="center">
         {totalStaked && totalStaked.gte(0) ? (
           <>
@@ -224,6 +224,8 @@ const ActionPanel: React.FC<ActionPanelProps> = ({ account, pool, userDataLoaded
       </Flex>
     </Flex>
   )
+
+  const isMobile = isXl === false;
 
   return (
     <StyledActionPanel expanded={expanded}>
@@ -252,7 +254,7 @@ const ActionPanel: React.FC<ActionPanelProps> = ({ account, pool, userDataLoaded
             </LinkExternal>
           </Flex>
         )}
-        {account && isMetaMaskInScope && tokenAddress && (
+        {/* {account && isMetaMaskInScope && tokenAddress && (
           <Flex mb="8px" justifyContent={['flex-end', 'flex-end', 'flex-start']}>
             <Button
               variant="text"
@@ -264,22 +266,35 @@ const ActionPanel: React.FC<ActionPanelProps> = ({ account, pool, userDataLoaded
               <MetamaskIcon ml="4px" />
             </Button>
           </Flex>
-        )}
+        )} */}
         {isAutoVault ? <CompoundingPoolTag /> : <ManualPoolTag />}
         {tagTooltipVisible && tagTooltip}
         <span ref={tagTargetRef}>
           <HelpIcon ml="4px" width="20px" height="20px" color="textSubtle" />
         </span>
       </InfoSection>
-      <ActionContainer>
-        {showSubtitle && (
-          <Text mt="4px" mb="16px" color="textSubtle">
-            {isAutoVault ? t('Automatic restaking') : `${t('Earn')} CPIE ${t('Stake').toLocaleLowerCase()} CPIE`}
-          </Text>
-        )}
-        <Stake pool={pool} userDataLoaded={userDataLoaded} />
-        <Harvest {...pool} userDataLoaded={userDataLoaded} />
-      </ActionContainer>
+      {
+        isMobile ?
+          <ActionContainer>
+            {showSubtitle && (
+              <Text mt="4px" mb="16px" color="textSubtle">
+                {isAutoVault ? t('Automatic restaking') : `${t('Earn')} CPIE ${t('Stake').toLocaleLowerCase()} CPIE`}
+              </Text>
+            )}
+            <Harvest {...pool} userDataLoaded={userDataLoaded} />
+            <Stake pool={pool} userDataLoaded={userDataLoaded} />
+          </ActionContainer> :
+          <ActionContainer>
+            {showSubtitle && (
+              <Text mt="4px" mb="16px" color="textSubtle">
+                {isAutoVault ? t('Automatic restaking') : `${t('Earn')} CPIE ${t('Stake').toLocaleLowerCase()} CPIE`}
+              </Text>
+            )}
+            <Stake pool={pool} userDataLoaded={userDataLoaded} />
+            <Harvest {...pool} userDataLoaded={userDataLoaded} />
+          </ActionContainer>
+      }
+
     </StyledActionPanel>
   )
 }

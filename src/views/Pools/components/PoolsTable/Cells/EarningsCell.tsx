@@ -97,7 +97,7 @@ const EarningsCell: React.FC<EarningsCellProps> = ({ pool, account, userDataLoad
   return (
     <StyledCell role="cell">
       <CellContent>
-        <Text fontSize="12px" color="textSubtle" textAlign="left">
+        <Text fontSize="12px" color="text" textAlign="left">
           {labelText}
         </Text>
         {!userDataLoaded && account ? (
@@ -130,9 +130,10 @@ const EarningsCell: React.FC<EarningsCellProps> = ({ pool, account, userDataLoad
                     )}
                   </>
                 ) : (
-                  <Text mt="4px" fontSize="12px" color="textDisabled">
-                    0 USD
-                  </Text>
+                  // <Text mt="4px" fontSize="12px" color="textDisabled">
+                  //   0 USD
+                  // </Text>
+                  null
                 )}
               </Box>
               {isAutoVault && hasEarnings && !isXs && !isSm && (
