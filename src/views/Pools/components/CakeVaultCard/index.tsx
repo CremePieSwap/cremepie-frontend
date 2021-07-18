@@ -47,8 +47,8 @@ const CakeVaultCard: React.FC<CakeVaultProps> = ({ pool, showStakedOnly }) => {
         <StyledCardHeader
           isStaking={accountHasSharesStaked}
           isAutoVault
-          earningToken={tokens.cake}
-          stakingToken={tokens.cake}
+          earningToken={tokens.cpie}
+          stakingToken={tokens.cpie}
         />
         <StyledCardBody isLoading={isLoading}>
           <AprRow pool={pool} performanceFee={performanceFeeAsDecimal} />
@@ -63,7 +63,7 @@ const CakeVaultCard: React.FC<CakeVaultProps> = ({ pool, showStakedOnly }) => {
               <VaultCardActions pool={pool} accountHasSharesStaked={accountHasSharesStaked} isLoading={isLoading} />
             ) : (
               <>
-                <Text mb="10px" textTransform="uppercase" fontSize="12px" color="textSubtle" bold>
+                <Text mb="10px" textTransform="uppercase" fontSize="12px" color="text" bold>
                   {t('Start earning')}
                 </Text>
                 <UnlockButton />

@@ -4,16 +4,16 @@ import { PoolConfig, PoolCategory } from './types'
 const pools: PoolConfig[] = [
   {
     sousId: 0,
-    stakingToken: tokens.dpie,
-    earningToken: tokens.dpie,
+    stakingToken: tokens.cpie,
+    earningToken: tokens.cpie,
     contractAddress: {
       97: '0xd3af5fe61dbaf8f73149bfcfa9fb653ff096029a',
       56: '0x73feaa1eE314F8c655E354234017bE2193C9E24E',
-      137: '0x33f150e39Ca7e9cB09a1571b781cc0649B8B425A',
+      137: '0xF7D8292b14C7ed8189c06a52ef20668c95c12482',
     },
     poolCategory: PoolCategory.CORE,
     harvest: true,
-    tokenPerBlock: '10',
+    tokenPerBlock: '500',
     sortOrder: 1,
     isFinished: false,
   },

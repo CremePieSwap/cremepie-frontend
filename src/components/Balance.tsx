@@ -28,7 +28,7 @@ const Balance: React.FC<BalanceProps> = ({
   }, [value])
 
   return (
-    <Text color={isDisabled ? 'textDisabled' : color} onClick={onClick} {...props}>
+    <Text color={isDisabled ? 'textDisabled' : color} bold onClick={onClick} {...props}>
       {prefix && <span>{prefix}</span>}
       <CountUp start={previousValue.current} end={value} decimals={decimals} duration={1} separator="," />
       {unit && <span>{unit}</span>}

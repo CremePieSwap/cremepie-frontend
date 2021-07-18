@@ -202,38 +202,38 @@ const Pools: React.FC = () => {
     </CardLayout>
   )
 
-  const tableLayout = <PoolsTable pools={poolsToShow()} account={account} userDataLoaded={userDataLoaded} />
+  const tableLayout = <PoolsTable pools={poolsToShow().filter((pool) => !pool.isAutoVault)} account={account} userDataLoaded={userDataLoaded} />
 
   return (
     <>
       <PageHeader>
         <Flex justifyContent="space-between" flexDirection={['column', null, null, 'row']}>
           <Flex flex="1" flexDirection="column" mr={['8px', 0]}>
-            <Heading as="h1" scale="xxl" color="secondary" mb="24px">
-              {t('Syrup Pools')}
+            <Heading as="h1" scale="xxl" color="white" mb="24px">
+              {t('Cream Pools')}
             </Heading>
-            <Heading scale="md" color="text">
+            <Heading scale="md" color="white">
               {t('Just stake some tokens to earn.')}
             </Heading>
-            <Heading scale="md" color="text">
+            <Heading scale="md" color="white">
               {t('High APR, low risk.')}
             </Heading>
           </Flex>
-          <Flex flex="1" height="fit-content" justifyContent="center" alignItems="center" mt={['24px', null, '0']}>
+          {/* <Flex flex="1" height="fit-content" justifyContent="center" alignItems="center" mt={['24px', null, '0']}>
             <HelpButton />
-          </Flex>
+          </Flex> */}
         </Flex>
       </PageHeader>
       <Page>
-        <PoolControls justifyContent="space-between">
-          <PoolTabButtons
+        <PoolControls justifyContent="flex-end">
+          {/* <PoolTabButtons
             stakedOnly={stakedOnly}
             setStakedOnly={setStakedOnly}
             hasStakeInFinishedPools={hasStakeInFinishedPools}
             viewMode={viewMode}
             setViewMode={setViewMode}
-          />
-          <SearchSortContainer>
+          /> */}
+          {/* <SearchSortContainer>
             <Flex flexDirection="column" width="50%">
               <Text fontSize="12px" bold color="textSubtle" textTransform="uppercase">
                 {t('Sort by')}
@@ -270,7 +270,7 @@ const Pools: React.FC = () => {
                 <SearchInput onChange={handleChangeSearchQuery} placeholder="Search Pools" />
               </ControlStretch>
             </Flex>
-          </SearchSortContainer>
+          </SearchSortContainer> */}
         </PoolControls>
         {showFinishedPools && (
           <Text fontSize="20px" color="failure" pb="32px">

@@ -77,15 +77,15 @@ const HarvestAction: React.FunctionComponent<HarvestActionProps> = ({
   )
 
   const actionTitle = isAutoVault ? (
-    <Text fontSize="12px" bold color="secondary" as="span" textTransform="uppercase">
-      {t('Recent CAKE profit')}
+    <Text fontSize="14px" bold color="primary" as="span" textTransform="uppercase">
+      {t('Recent CPIE profit')}
     </Text>
   ) : (
     <>
-      <Text fontSize="12px" bold color="secondary" as="span" textTransform="uppercase">
+      <Text fontSize="14px" bold color="primary" as="span" textTransform="uppercase">
         {earningToken.symbol}{' '}
       </Text>
-      <Text fontSize="12px" bold color="textSubtle" as="span" textTransform="uppercase">
+      <Text fontSize="14px" bold color="text" as="span" textTransform="uppercase">
         {t('Earned')}
       </Text>
     </>
@@ -116,10 +116,10 @@ const HarvestAction: React.FunctionComponent<HarvestActionProps> = ({
 
   return (
     <ActionContainer>
-      <ActionTitles>{actionTitle}</ActionTitles>
       <ActionContent>
-        <Flex flex="1" pt="16px" flexDirection="column" alignSelf="flex-start">
+        <Flex flex="1" flexDirection="column" alignSelf="flex-start">
           <>
+          <ActionTitles>{actionTitle}</ActionTitles>
             {hasEarnings ? (
               <>
                 <Balance lineHeight="1" bold fontSize="20px" decimals={5} value={earningTokenBalance} />
@@ -138,9 +138,9 @@ const HarvestAction: React.FunctionComponent<HarvestActionProps> = ({
             ) : (
               <>
                 <Heading color="textDisabled">0</Heading>
-                <Text fontSize="12px" color="textDisabled">
+                {/* <Text fontSize="12px" color="textDisabled">
                   0 USD
-                </Text>
+                </Text> */}
               </>
             )}
           </>
