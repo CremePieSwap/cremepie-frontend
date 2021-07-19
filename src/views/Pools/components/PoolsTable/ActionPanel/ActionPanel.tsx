@@ -143,13 +143,14 @@ const ActionPanel: React.FC<ActionPanelProps> = ({ account, pool, userDataLoaded
   const isManualCakePool = sousId === 0
 
   const getTotalStakedBalance = () => {
-    if (isAutoVault) {
-      return getBalanceNumber(totalCakeInVault, stakingToken.decimals)
-    }
-    if (isManualCakePool) {
-      const manualCakeTotalMinusAutoVault = new BigNumber(totalStaked).minus(totalCakeInVault)
-      return getBalanceNumber(manualCakeTotalMinusAutoVault, stakingToken.decimals)
-    }
+    // if (isAutoVault) {
+    //   return getBalanceNumber(totalCakeInVault, stakingToken.decimals)
+    // }
+    // if (isManualCakePool) {
+    //   const manualCakeTotalMinusAutoVault = new BigNumber(totalStaked).minus(totalCakeInVault)
+    //   console.error(getBalanceNumber(manualCakeTotalMinusAutoVault, stakingToken.decimals));
+    //   return getBalanceNumber(manualCakeTotalMinusAutoVault, stakingToken.decimals)
+    // }
     return getBalanceNumber(totalStaked, stakingToken.decimals)
   }
 
