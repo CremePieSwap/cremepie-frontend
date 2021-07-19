@@ -41,4 +41,10 @@ export const Earned = styled.div`
   font-weight: 600;
   font-size: 20px;
   color: ${({ theme }) => theme.colors.text};
+  max-width: 200px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  @media (max-width: 500px) {
+    max-width: 140px;
+  }
 `
