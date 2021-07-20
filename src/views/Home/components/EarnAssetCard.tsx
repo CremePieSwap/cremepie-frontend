@@ -48,40 +48,9 @@ const Block = styled.div`
     background: linear-gradient(247.99deg, rgba(80, 227, 194, 0.5) 0%, rgba(255, 245, 133, 0.5) 49.23%, rgba(227, 80, 122, 0.5) 98.46%);;
     backdrop-filter: blur(5px);
   }
-  &.type-2 {
-    background: #FFFFFF;
-  }
-  &.type-3 {
-    background: linear-gradient(247.99deg, #FAE8BA 0%, #50E3C2 98.46%);
-    width: 100%;
-    text-align: center;
-    margin-bottom: 30px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    position: relative;
-    overflow: hidden;
-    .icon-bg {
-      position: absolute;
-      right: 8px;
-      top: 8px;
-    }
-    .icon-bg-mobile {
-      position: absolute;
-      left: 0;
-      bottom: 0;
-    }
-  }
-  &.type-4, &.type-5 {
-    margin-bottom: 30px;
-    background: #FFFFFF;
-  }
 
   @media (max-width: 500px) {
     width: 100%;
-    &.type-3, &.type-4, &.type-5 {
-      margin-bottom: 20px;
-    }
   }
 `
 const Subtitle = styled.div<{ color: string }>`
@@ -91,7 +60,7 @@ const Subtitle = styled.div<{ color: string }>`
   color: ${({ color }) => color};
 `
 const Title = styled.div<{ color: string }>`
-  font-size: 24px;
+  font-size: 28px;
   line-height: 23px;
   font-family: SFPro900;
   color: ${({ color }) => color};

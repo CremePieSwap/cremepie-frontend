@@ -1,33 +1,3 @@
-// import React from 'react'
-// import styled from 'styled-components'
-// import PageTitle from './components/PageTitle'
-// import PageBlock from './components/PageBlock'
-
-// const StyleHome = styled.div`
-//   width: 100%;
-//   text-align: center;
-//   background: url(/images/main_bg.svg) no-repeat;
-//   background-size: cover;
-//   padding-top: 50px;
-//   @media (max-width: 960px) {
-//     padding-top: 20px;
-//   }
-//   @media (max-width: 500px) {
-//     padding: 20px 20px 0;
-//   }
-// `
-
-// const Home: React.FC = () => {
-//   return (
-//     <StyleHome>
-//       <PageTitle/>
-//       <PageBlock/>
-//     </StyleHome>
-//   )
-// }
-
-// export default Home
-
 import React from 'react'
 import styled from 'styled-components'
 import { Heading, Text, BaseLayout } from '@cremepie/uikit'
@@ -38,116 +8,76 @@ import CakeStats from 'views/Home/components/CakeStats'
 import TotalValueLockedCard from 'views/Home/components/TotalValueLockedCard'
 import EarnAPRCard from 'views/Home/components/EarnAPRCard'
 import EarnAssetCard from 'views/Home/components/EarnAssetCard'
+import HowToBuyCard from 'views/Home/components/HowToBuyCard'
 import PredictionPromotionCard from 'views/Home/components/PredictionPromotionCard'
 import LotteryPromotionCard from 'views/Home/components/LotteryPromotionCard'
 import LotteryBanner from 'views/Home/components/LotteryBanner'
 import useFetchLotteryForPromos from 'views/Home/hooks/useFetchLotteryForPromos'
 
-const Hero = styled.div`
-  align-items: center;
-  background-image: url('/images/pan-bg-mobile.svg');
-  background-repeat: no-repeat;
-  background-position: top center;
-  display: flex;
-  justify-content: center;
-  flex-direction: column;
-  margin: auto;
-  margin-bottom: 32px;
-  padding-top: 116px;
-  text-align: center;
-
-  ${({ theme }) => theme.mediaQueries.lg} {
-    background-image: url('/images/pan-bg2.svg'), url('/images/pan-bg.svg');
-    background-position: left center, right center;
-    height: 165px;
-    padding-top: 0;
-  }
-`
-
-const Cards = styled(BaseLayout)`
-  align-items: stretch;
-  justify-content: stretch;
-  margin-bottom: 24px;
-  grid-gap: 24px;
-
-  & > div {
-    grid-column: span 6;
-    width: 100%;
-  }
-
-  ${({ theme }) => theme.mediaQueries.sm} {
-    & > div {
-      grid-column: span 8;
-    }
-  }
-
-  ${({ theme }) => theme.mediaQueries.lg} {
-    margin-bottom: 32px;
-    grid-gap: 32px;
-
-    & > div {
-      grid-column: span 6;
-    }
-  }
-`
-
-const CTACards = styled(BaseLayout)`
-  align-items: start;
-  margin-bottom: 24px;
-  grid-gap: 24px;
-
-  & > div {
-    grid-column: span 6;
-  }
-
-  ${({ theme }) => theme.mediaQueries.sm} {
-    & > div {
-      grid-column: span 8;
-    }
-  }
-
-  ${({ theme }) => theme.mediaQueries.lg} {
-    margin-bottom: 32px;
-    grid-gap: 32px;
-
-    & > div {
-      grid-column: span 4;
-    }
-  }
-`
+import PageTitle from './components/PageTitle'
 
 const Home: React.FC = () => {
   const { t } = useTranslation()
-  const { currentLotteryPrize } = useFetchLotteryForPromos()
-
   return (
     <>
-      <LotteryBanner currentLotteryPrize={currentLotteryPrize} />
       <Page>
-        <Hero>
-          <Heading as="h1" scale="xl" mb="24px" color="secondary">
-            {t('PancakeSwap')}
-          </Heading>
-          <Text>{t('The #1 AMM and yield farm on Binance Smart Chain.')}</Text>
-        </Hero>
-        <div>
-          <Cards>
-            <FarmStakingCard />
-            <PredictionPromotionCard />
-          </Cards>
-          <CTACards>
-            <EarnAPRCard />
-            <EarnAssetCard />
-            <LotteryPromotionCard currentLotteryPrize={currentLotteryPrize} />
-          </CTACards>
-          <Cards>
-            <CakeStats />
-            <TotalValueLockedCard />
-          </Cards>
-        </div>
+        <PageTitle />
+        <StylePageBlock>
+          <BlockContainer>
+            <BlockRow>
+              <FarmStakingCard />
+              <RightBlock>
+                <EarnAssetCard />
+                <EarnAPRCard />
+              </RightBlock>
+            </BlockRow>
+            <BlockRow>
+              <HowToBuyCard />
+            </BlockRow>
+            <BlockRow>
+              <TotalValueLockedCard />
+              <CakeStats />
+            </BlockRow>
+          </BlockContainer>
+        </StylePageBlock>
       </Page>
     </>
   )
 }
 
 export default Home
+
+const StylePageBlock = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: -30px;
+`
+
+const BlockContainer = styled.div`
+  width: 730px;
+  @media (max-width: 720px) {
+    width: 100%;
+  }
+`
+
+const BlockRow = styled.div`
+  display: flex;
+  justify-content: space-between;
+  @media (max-width: 500px) {
+    display: block;
+    width: 100%;
+    margin: 0 auto 20px;
+  };
+`
+
+const RightBlock = styled.div`
+  display: grid;
+  grid-auto-rows: auto;
+  gap: 20px;
+  margin-bottom: 30px;
+  @media (max-width: 500px) {
+    gap: 20px;
+    margin-bottom: 20px;
+  };
+`

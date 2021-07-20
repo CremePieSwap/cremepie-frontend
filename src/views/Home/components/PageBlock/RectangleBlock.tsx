@@ -237,9 +237,6 @@ export default function RectangleBlock({
   }, [cakePrice, farmsLP])
 
 
-
-
-
   switch (type) {
     case 1:
       return (
