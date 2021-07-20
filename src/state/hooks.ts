@@ -343,6 +343,8 @@ export const usePriceBnbBusd = (): BigNumber => {
 
 export const usePriceCakeBusd = (): BigNumber => {
   const cakeBnbFarm = useFarmFromPid(3)
+  console.error('cakeBnbFarm', cakeBnbFarm);
+  
   return new BigNumber(cakeBnbFarm.token.busdPrice)
 }
 

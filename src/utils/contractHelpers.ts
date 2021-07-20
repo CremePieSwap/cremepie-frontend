@@ -51,6 +51,7 @@ import chainlinkOracleAbi from 'config/abi/chainlinkOracle.json'
 import MultiCallAbi from 'config/abi/Multicall.json'
 import bunnySpecialCakeVaultAbi from 'config/abi/bunnySpecialCakeVault.json'
 import bunnySpecialPredictionAbi from 'config/abi/bunnySpecialPrediction.json'
+import cremepiePairABI from 'config/abi/cremepie_pair.json'
 import { ChainLinkOracleContract, PredictionsContract } from './types'
 
 const getContract = (abi: any, address: string, signer?: ethers.Signer | ethers.providers.Provider) => {
@@ -134,4 +135,7 @@ export const getBunnySpecialCakeVaultContract = (signer?: ethers.Signer | ethers
 }
 export const getBunnySpecialPredictionContract = (signer?: ethers.Signer | ethers.providers.Provider) => {
   return getContract(bunnySpecialPredictionAbi, getBunnySpecialPredictionAddress(), signer)
+}
+export const getCpieUsdtLPContract = (signer?: ethers.Signer | ethers.providers.Provider) => {
+  return getContract(cremepiePairABI, '0x8DE0068ceA36C0bD1B10034f28Ba680C94a0954A', signer)
 }

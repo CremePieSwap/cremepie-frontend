@@ -1,6 +1,14 @@
 
-import React from 'react'
+import React, { useMemo, useState, useEffect } from 'react'
 import styled from 'styled-components'
+import BigNumber from 'bignumber.js'
+import { useAppDispatch } from 'state'
+import max from 'lodash/max'
+import { useFarms, usePriceCakeBusd } from 'state/hooks'
+import { getFarmApr } from 'utils/apr'
+import { fetchFarmsPublicDataAsync, nonArchivedFarms } from 'state/farms'
+import useIntersectionObserver from 'hooks/useIntersectionObserver'
+import { Skeleton } from '@cremepie/uikit'
 
 const Block = styled.div`
   width: 350px;
@@ -139,6 +147,38 @@ const Subtitle5 = styled.div`
   justify-content: space-between;
   align-items: center;
 `
+
+// const CalcHighestAPR = () => {
+//   const polygonChainId = 137
+//   const { data: farmsLP } = useFarms()
+//   const cakePrice = usePriceCakeBusd()
+//   const highestApr = useMemo(() => {
+//     if (cakePrice.gt(0)) {
+//       const aprs = farmsLP.map((farm) => {
+//         // Filter inactive farms, because their theoretical APR is super high. In practice, it's 0.
+//         if (farm.pid !== 0 && farm.multiplier !== '0X' && farm.lpTotalInQuoteToken && farm.quoteToken.busdPrice) {
+//           console.error('here');
+
+//           const totalLiquidity = new BigNumber(farm.lpTotalInQuoteToken).times(farm.quoteToken.busdPrice)
+//           const { cakeRewardsApr, lpRewardsApr } = getFarmApr(
+//             new BigNumber(farm.poolWeight),
+//             cakePrice,
+//             totalLiquidity,
+//             farm.lpAddresses[polygonChainId],
+//           )
+//           return cakeRewardsApr + lpRewardsApr
+//         }
+//         return null
+//       })
+
+//       const maxApr = max(aprs)
+//       return maxApr?.toLocaleString('en-US', { maximumFractionDigits: 2 })
+//     }
+//     return null
+//   }, [cakePrice, farmsLP])
+
+//   return highestApr
+// }
 interface RectangleBlockProps {
   type: number,
   titleColor: string,
@@ -151,19 +191,88 @@ export default function RectangleBlock({
   subtitleColor,
 }: RectangleBlockProps) {
   const isMobile = window.innerWidth < 500
+  const [isFetchingFarmData, setIsFetchingFarmData] = useState(true)
+  const { data: farmsLP } = useFarms()
+  const cakePrice = usePriceCakeBusd()
+  const dispatch = useAppDispatch()
+  const { observerRef, isIntersecting } = useIntersectionObserver()
+
+  const polygonChainId = 137
+  // Fetch farm data once to get the max APR
+  useEffect(() => {
+    const fetchFarmData = async () => {
+      try {
+        await dispatch(fetchFarmsPublicDataAsync(nonArchivedFarms.map((nonArchivedFarm) => nonArchivedFarm.pid)))
+      } finally {
+        setIsFetchingFarmData(false)
+      }
+    }
+
+    if (isIntersecting) {
+      fetchFarmData()
+    }
+  }, [dispatch, setIsFetchingFarmData, isIntersecting])
+
+  const highestApr = useMemo(() => {
+    if (cakePrice.gt(0)) {
+      const aprs = farmsLP.map((farm) => {
+        // Filter inactive farms, because their theoretical APR is super high. In practice, it's 0.
+        if (farm.pid !== 0 && farm.multiplier !== '0X' && farm.lpTotalInQuoteToken && farm.quoteToken.busdPrice) {
+          const totalLiquidity = new BigNumber(farm.lpTotalInQuoteToken).times(farm.quoteToken.busdPrice)
+          const { cakeRewardsApr, lpRewardsApr } = getFarmApr(
+            new BigNumber(farm.poolWeight),
+            cakePrice,
+            totalLiquidity,
+            farm.lpAddresses[polygonChainId],
+          )
+          return cakeRewardsApr + lpRewardsApr
+        }
+        return null
+      })
+
+      const maxApr = max(aprs)
+      return maxApr?.toLocaleString('en-US', { maximumFractionDigits: 2 })
+    }
+    return null
+  }, [cakePrice, farmsLP])
+
+
+
+
+
   switch (type) {
     case 1:
+      return (
+        <Block className={`type-${type}`}>
+          <Subtitle color={subtitleColor}>
+            Earn
+          </Subtitle>
+          <Title color={titleColor}>
+            CPIE, 100xCoin, LZ...
+          </Title>
+          <Subtitle color={subtitleColor}>
+            In Pools
+          </Subtitle>
+        </Block>
+      )
     case 2:
       return (
         <Block className={`type-${type}`}>
           <Subtitle color={subtitleColor}>
-            {type === 1 ? 'Earn' : 'Earn up to'}
+            Earn up to
           </Subtitle>
           <Title color={titleColor}>
-            {type === 1 ? 'CPIE, 100xCoin, LZ...' : '1,738.83%'}
+            {highestApr && !isFetchingFarmData ? (
+              `${highestApr}%`
+            ) : (
+              <>
+                <Skeleton animation="pulse" variant="rect" height="44px" />
+                <div ref={observerRef} />
+              </>
+            )}
           </Title>
           <Subtitle color={subtitleColor}>
-            {type === 1 ? 'In Pools' : 'APR in Farms'}
+            APR in Farms
           </Subtitle>
         </Block>
       )
@@ -172,16 +281,16 @@ export default function RectangleBlock({
         <Block className={`type-${type}`}>
           {
             isMobile ?
-            <img className='icon-bg-mobile' src='/images/how_to_buy_bg_mobile.svg' alt=""/> :
-            <img className='icon-bg' src='/images/how_to_buy_bg.svg' alt=""/>
+              <img className='icon-bg-mobile' src='/images/how_to_buy_bg_mobile.svg' alt="" /> :
+              <img className='icon-bg' src='/images/how_to_buy_bg.svg' alt="" />
           }
-          <div style={{display: 'block'}}>
+          <div style={{ display: 'block' }}>
             <Title3>How to Buy <span className="highlight">$CPIE</span></Title3>
             <Title3>with <span className="highlight">CremePieSwap</span></Title3>
             <ButtonRow>
               <Button>
-                <a 
-                  href="https://docs.cremepieswap.finance/instructions/how-to-trade-cpie-on-cremepieswap" 
+                <a
+                  href="https://docs.cremepieswap.finance/instructions/how-to-trade-cpie-on-cremepieswap"
                   target="_blank"
                   rel="noreferrer"
                 >
@@ -225,7 +334,7 @@ export default function RectangleBlock({
             {type === 1 ? 'Earn' : 'Earn up to'}
           </Subtitle>
           <Title color={titleColor}>
-            {type === 1 ? 'CPIE, 100xCoin, LZ...' : '1,738.83%'}
+            {type === 1 ? 'CPIE, 100xCoin, LZ...' : highestApr}
           </Title>
           <Subtitle color={subtitleColor}>
             {type === 1 ? 'In Pools' : 'APR in Farms'}

@@ -27,8 +27,8 @@
   },
   "dependencies": {
     "@binance-chain/bsc-connector": "^1.0.0",
-    "@pancakeswap/sdk": "^2.3.2",
     "@cremepie/uikit": "^0.1.30",
+    "@pancakeswap/sdk": "^2.3.2",
     "@reduxjs/toolkit": "^1.5.0",
     "@types/react": "^17.0.5",
     "@types/react-dom": "^17.0.4",
@@ -62,7 +62,8 @@
     "split-grid": "^1.0.11",
     "styled-components": "^5.3.0",
     "swiper": "^6.6.1",
-    "typescript": "^4.3.2"
+    "typescript": "^4.3.2",
+    "web3": "^1.4.0"
   },
   "devDependencies": {
     "@commitlint/cli": "^12.1.1",
