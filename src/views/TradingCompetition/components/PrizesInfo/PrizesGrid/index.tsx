@@ -117,7 +117,7 @@ const PrizesGrid = () => {
                     </Text>
                   </Td>
                   <BoldTd>
-                    {`$${row.cakePrizeInUsd.toLocaleString(undefined, {
+                    {`$${row.cakePrizeInUsd.toLocaleString('en-US', {
                       minimumFractionDigits: 0,
                       maximumFractionDigits: 0,
                     })}`}
@@ -128,7 +128,7 @@ const PrizesGrid = () => {
                       {teamPlayer && <TeamPlayerIcon mr={[0, '4px']} />}
                       <TrophyGoldIcon mr={[0, '4px']} />
                       <Text fontSize="12px" color="textSubtle">
-                        {`+${getTotalAchievementPoints(row.achievements).toLocaleString(undefined, {
+                        {`+${getTotalAchievementPoints(row.achievements).toLocaleString('en-US', {
                           minimumFractionDigits: 0,
                           maximumFractionDigits: 0,
                         })}`}

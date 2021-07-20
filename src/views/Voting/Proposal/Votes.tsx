@@ -47,7 +47,7 @@ const Votes: React.FC<VotesProps> = ({ votes }) => {
       <CardHeader>
         <Flex alignItems="center" justifyContent="space-between">
           <Heading as="h3" scale="md">
-            {t('Votes (%count%)', { count: votes.length.toLocaleString() })}
+            {t('Votes (%count%)', { count: votes.length.toLocaleString('en-US') })}
           </Heading>
           {!isFinished && <AutoRenewIcon spin width="22px" />}
         </Flex>

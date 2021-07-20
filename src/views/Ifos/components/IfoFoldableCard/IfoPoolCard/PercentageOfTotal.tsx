@@ -14,7 +14,7 @@ const PercentageOfTotal: React.FC<PercentageOfTotalProps> = ({ userAmount, total
   const percentOfUserContribution = totalAmount.isGreaterThan(0)
     ? userAmount.div(totalAmount).times(100).toNumber()
     : BIG_ZERO
-  const percentOfUserDisplay = percentOfUserContribution.toLocaleString(undefined, { maximumFractionDigits: 5 })
+  const percentOfUserDisplay = percentOfUserContribution.toLocaleString('en-US', { maximumFractionDigits: 5 })
 
   return (
     <Text fontSize="14px" color="textSubtle" {...props}>

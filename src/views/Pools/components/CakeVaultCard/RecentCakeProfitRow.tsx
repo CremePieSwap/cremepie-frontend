@@ -24,7 +24,7 @@ const RecentCakeProfitCountdownRow = () => {
 
   const lastActionInMs = lastUserActionTime && parseInt(lastUserActionTime) * 1000
   const dateTimeLastAction = new Date(lastActionInMs)
-  const dateStringToDisplay = dateTimeLastAction.toLocaleString()
+  const dateStringToDisplay = dateTimeLastAction.toLocaleString('en-US')
 
   return (
     <Flex alignItems="center" justifyContent="space-between">

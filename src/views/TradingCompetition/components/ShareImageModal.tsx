@@ -97,8 +97,8 @@ const ShareImageModal: React.FC<YourScoreProps> = ({ onDismiss, profile, userLea
       ctx.fillText(`@${profile.username}`, canvasWidth * 0.033, canvasHeight * 0.53)
 
       ctx.font = 'bold 72px Kanit'
-      ctx.fillText(`# ${team.toLocaleString()}`, canvasWidth * 0.18, canvasHeight * 0.69)
-      ctx.fillText(`# ${global.toLocaleString()}`, canvasWidth * 0.18, canvasHeight * 0.79)
+      ctx.fillText(`# ${team.toLocaleString('en-US')}`, canvasWidth * 0.18, canvasHeight * 0.69)
+      ctx.fillText(`# ${global.toLocaleString('en-US')}`, canvasWidth * 0.18, canvasHeight * 0.79)
       ctx.fillText(`$ ${localiseTradingVolume(volume)}`, canvasWidth * 0.18, canvasHeight * 0.89)
 
       setImageFromCanvas(canvas.current.toDataURL('image/png'))

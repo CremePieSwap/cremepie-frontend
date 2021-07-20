@@ -121,7 +121,7 @@ const NextDrawCard = () => {
 
   const getNextDrawDateTime = () => {
     if (status === LotteryStatus.OPEN) {
-      return `${t('Draw')}: ${endDate.toLocaleString(undefined, dateTimeOptions)}`
+      return `${t('Draw')}: ${endDate.toLocaleString('en-US', dateTimeOptions)}`
     }
     return ''
   }

@@ -30,7 +30,7 @@ export const formatNumber = (number: number, minPrecision = 2, maxPrecision = 2)
     minimumFractionDigits: minPrecision,
     maximumFractionDigits: maxPrecision,
   }
-  return number.toLocaleString(undefined, options)
+  return number.toLocaleString('en-US', options)
 }
 
 /**

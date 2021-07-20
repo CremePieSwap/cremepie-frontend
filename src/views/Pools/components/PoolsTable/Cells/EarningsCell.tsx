@@ -60,7 +60,7 @@ const EarningsCell: React.FC<EarningsCellProps> = ({ pool, account, userDataLoad
 
   const lastActionInMs = lastUserActionTime && parseInt(lastUserActionTime) * 1000
   const dateTimeLastAction = new Date(lastActionInMs)
-  const dateStringToDisplay = dateTimeLastAction.toLocaleString()
+  const dateStringToDisplay = dateTimeLastAction.toLocaleString('en-US')
 
   const labelText = isAutoVault ? t('Recent CPIE profit') : t('%asset% Earned', { asset: earningToken.symbol })
   earningTokenBalance = isAutoVault ? autoCakeToDisplay : earningTokenBalance

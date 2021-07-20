@@ -175,7 +175,7 @@ const CardUserInfo: React.FC<YourScoreProps> = ({
                 <UserRankBox
                   flex="1"
                   title={t('Rank in team').toUpperCase()}
-                  footer={userLeaderboardInformation ? t('#%global% Overall', { global: global.toLocaleString() }) : ''}
+                  footer={userLeaderboardInformation ? t('#%global% Overall', { global: global.toLocaleString('en-US') }) : ''}
                   mr={[0, '8px']}
                   mb={['8px', 0]}
                 >
