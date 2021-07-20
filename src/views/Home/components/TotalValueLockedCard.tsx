@@ -4,37 +4,20 @@ import { Card, CardBody, Heading, Skeleton, Text } from '@cremepie/uikit'
 import { useTranslation } from 'contexts/Localization'
 import { useGetStats } from 'hooks/api'
 
-const StyledTotalValueLockedCard = styled(Card)`
-  align-items: center;
-  display: flex;
-  flex: 1;
-`
-
 const TotalValueLockedCard = () => {
   const { t } = useTranslation()
-  const data = useGetStats()
+  const data = '1,361,331'
   // const tvl = data ? data.tvl.toLocaleString('en-US', { maximumFractionDigits: 0 }) : null
-  // const tvl = data ? data : null
-
   return (
-    // <StyledTotalValueLockedCard>
-    //   <CardBody>
-    //     <Heading scale="lg" mb="24px">
-    //       {t('Total Value Locked (TVL)')}
-    //     </Heading>
-    //     {data ? (
-    //       <>
-    //         <Heading scale="xl">{`$${data}`}</Heading>
-    //         <Text color="textSubtle">{t('Across all LPs and Syrup Pools')}</Text>
-    //       </>
-    //     ) : (
-    //       <Skeleton height={66} />
-    //     )}
-    //   </CardBody>
-    // </StyledTotalValueLockedCard>
     <Block className="type-4">
       <Subtitle4>Total Value Locked (TVL)</Subtitle4>
-      <Title4>$1,379,792</Title4>
+      {data ? (
+        <>
+          <Title4>{`$${data}`}</Title4>
+        </>
+      ) : (
+        <Skeleton height={45} />
+      )}
       <Description4>Across all LPs and Cream Pool</Description4>
     </Block>
   )
