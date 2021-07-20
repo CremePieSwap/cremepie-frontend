@@ -27,26 +27,76 @@ const CakeStats = () => {
   const cakeSupply = totalSupply ? getBalanceNumber(totalSupply) - burnedBalance : 0
 
   return (
-    <StyledCakeStats>
-      <CardBody>
-        <Heading scale="xl" mb="24px">
-          {t('Cake Stats')}
-        </Heading>
-        <Row>
-          <Text fontSize="14px">{t('Total CAKE Supply')}</Text>
-          {cakeSupply && <CardValue fontSize="14px" value={cakeSupply} />}
-        </Row>
-        <Row>
-          <Text fontSize="14px">{t('Total CAKE Burned')}</Text>
-          <CardValue fontSize="14px" decimals={0} value={burnedBalance} />
-        </Row>
-        <Row>
-          <Text fontSize="14px">{t('New CAKE/block')}</Text>
-          <CardValue fontSize="14px" decimals={0} value={19} />
-        </Row>
-      </CardBody>
-    </StyledCakeStats>
+    // <StyledCakeStats>
+    //   <CardBody>
+    //     <Heading scale="xl" mb="24px">
+    //       {t('Cake Stats')}
+    //     </Heading>
+    //     <Row>
+    //       <Text fontSize="14px">{t('Total CAKE Supply')}</Text>
+    //       {cakeSupply && <CardValue fontSize="14px" value={cakeSupply} />}
+    //     </Row>
+    //     <Row>
+    //       <Text fontSize="14px">{t('Total CAKE Burned')}</Text>
+    //       <CardValue fontSize="14px" decimals={0} value={burnedBalance} />
+    //     </Row>
+    //     <Row>
+    //       <Text fontSize="14px">{t('New CAKE/block')}</Text>
+    //       <CardValue fontSize="14px" decimals={0} value={19} />
+    //     </Row>
+    //   </CardBody>
+    // </StyledCakeStats>
+    <Block className='type-5'>
+      <Title5>CPIE Stats</Title5>
+      <Subtitle5>
+        <div>Total CPIE Supply</div>
+        <div>50,000,000,000</div>
+      </Subtitle5>
+      <Subtitle5>
+        <div>Total CPIE Burned</div>
+        <div>0</div>
+      </Subtitle5>
+      <Subtitle5>
+        <div>New CPIE per block</div>
+        <div>2000</div>
+      </Subtitle5>
+    </Block>
   )
 }
 
 export default CakeStats
+
+const Block = styled.div`
+  width: 350px;
+  padding: 20px 30px;
+  box-shadow: 1px 1px 1px rgba(23, 18, 43, 0.1);
+  border-radius: 15px;
+  text-align: left;
+  position: relative;
+  &.type-5 {
+    margin-bottom: 30px;
+    background: #FFFFFF;
+  }
+
+  @media (max-width: 500px) {
+    width: 100%;
+    &.type-5 {
+      margin-bottom: 20px;
+    }
+  }
+`
+const Title5 = styled.div`
+  font-size: 32px;
+  line-height: 40px;
+  font-family: SFPro900;
+  color: #50E3C2;
+`
+const Subtitle5 = styled.div`
+  font-size: 14px;
+  line-height: 23px;
+  font-weight: 400;
+  color: #A9A9A9;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+`

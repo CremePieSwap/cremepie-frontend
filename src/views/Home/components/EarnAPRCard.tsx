@@ -12,24 +12,6 @@ import { fetchFarmsPublicDataAsync, nonArchivedFarms } from 'state/farms'
 import { getFarmApr } from 'utils/apr'
 import useIntersectionObserver from 'hooks/useIntersectionObserver'
 
-const StyledFarmStakingCard = styled(Card)`
-  margin-left: auto;
-  margin-right: auto;
-  width: 100%;
-
-  ${({ theme }) => theme.mediaQueries.lg} {
-    margin: 0;
-    max-width: none;
-  }
-
-  transition: opacity 200ms;
-  &:hover {
-    opacity: 0.65;
-  }
-`
-const CardMidContent = styled(Heading).attrs({ scale: 'xl' })`
-  line-height: 44px;
-`
 const EarnAPRCard = () => {
   const [isFetchingFarmData, setIsFetchingFarmData] = useState(true)
   const { t } = useTranslation()
@@ -81,32 +63,56 @@ const EarnAPRCard = () => {
   const [earnUpTo, InFarms] = earnAprText.split(aprText)
 
   return (
-    <StyledFarmStakingCard>
+    <Block className='type-2'>
       <NavLink exact activeClassName="active" to="/farms" id="farm-apr-cta">
-        <CardBody>
-          <Heading color="contrast" scale="lg">
-            {earnUpTo}
-          </Heading>
-          <CardMidContent color="#7645d9">
-            {highestApr && !isFetchingFarmData ? (
-              `${highestApr}%`
-            ) : (
-              <>
-                <Skeleton animation="pulse" variant="rect" height="44px" />
-                <div ref={observerRef} />
-              </>
-            )}
-          </CardMidContent>
-          <Flex justifyContent="space-between">
-            <Heading color="contrast" scale="lg">
-              {InFarms}
-            </Heading>
-            <ArrowForwardIcon mt={30} color="primary" />
-          </Flex>
-        </CardBody>
+      <Subtitle color="#F397B7">
+        Earn up to
+      </Subtitle>
+      <Title color='#50E3C2'>
+        {highestApr && !isFetchingFarmData ? (
+          `${highestApr}%`
+        ) : (
+          <>
+            <Skeleton animation="pulse" variant="rect" height="44px" />
+            <div ref={observerRef} />
+          </>
+        )}
+      </Title>
+      <Subtitle color="#F397B7">
+        APR in Farms
+        <ArrowForwardIcon mt={30} color="primary" style={{float: 'right'}}/>
+      </Subtitle>
       </NavLink>
-    </StyledFarmStakingCard>
+    </Block>
   )
 }
 
 export default EarnAPRCard
+
+const Block = styled.div`
+  width: 350px;
+  padding: 20px 30px;
+  box-shadow: 1px 1px 1px rgba(23, 18, 43, 0.1);
+  border-radius: 15px;
+  text-align: left;
+  position: relative;
+  &.type-2 {
+    background: #FFFFFF;
+  }
+
+  @media (max-width: 500px) {
+    width: 100%;
+  }
+`
+const Subtitle = styled.div<{ color: string }>`
+  font-size: 24px;
+  line-height: 40px;
+  font-weight: 600;
+  color: ${({ color }) => color};
+`
+const Title = styled.div<{ color: string }>`
+  font-size: 32px;
+  line-height: 40px;
+  font-family: SFPro900;
+  color: ${({ color }) => color};
+`
