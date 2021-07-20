@@ -217,7 +217,7 @@ const ApyCalculatorModal: React.FC<ApyCalculatorModalProps> = ({
             </li>
             <li>
               <Text fontSize="12px" textAlign="center" color="textSubtle" display="inline">
-                {t('Compounding %freq%x daily.', { freq: compoundFrequency.toLocaleString() })}
+                {t('Compounding %freq%x daily.', { freq: compoundFrequency.toLocaleString('en-US') })}
               </Text>
             </li>
             {isFarm && (

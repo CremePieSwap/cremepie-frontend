@@ -8,7 +8,7 @@ interface PointsLabelProps extends FlexProps {
 
 const PointsLabel: React.FC<PointsLabelProps> = ({ points, ...props }) => {
   const { t } = useTranslation()
-  const localePoints = points.toLocaleString()
+  const localePoints = points.toLocaleString('en-US')
 
   return (
     <Flex alignItems="center" {...props}>

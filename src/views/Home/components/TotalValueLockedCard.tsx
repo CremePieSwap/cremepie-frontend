@@ -6,14 +6,15 @@ import { useGetStats } from 'hooks/api'
 
 const TotalValueLockedCard = () => {
   const { t } = useTranslation()
-  const data = '1,361,331'
+  const data = 1361331
+  const tvl = data.toLocaleString('en-US')
   // const tvl = data ? data.tvl.toLocaleString('en-US', { maximumFractionDigits: 0 }) : null
   return (
     <Block className="type-4">
       <Subtitle4>Total Value Locked (TVL)</Subtitle4>
       {data ? (
         <>
-          <Title4>{`$${data}`}</Title4>
+          <Title4>{`$${tvl}`}</Title4>
         </>
       ) : (
         <Skeleton height={45} />

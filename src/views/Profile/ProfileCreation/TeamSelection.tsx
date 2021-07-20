@@ -50,7 +50,7 @@ const Team: React.FC = () => {
                   <Text bold>{team.name}</Text>
                   <Flex>
                     <CommunityIcon mr="8px" />
-                    <Text>{team.users.toLocaleString()}</Text>
+                    <Text>{team.users.toLocaleString('en-US')}</Text>
                   </Flex>
                 </SelectionCard>
               )

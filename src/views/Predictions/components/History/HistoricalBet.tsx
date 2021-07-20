@@ -134,7 +134,7 @@ const HistoricalBet: React.FC<BetProps> = ({ bet }) => {
               {t('Round')}
             </Text>
             <Text bold lineHeight={1}>
-              {round.epoch.toLocaleString()}
+              {round.epoch.toLocaleString('en-US')}
             </Text>
           </Text>
         </Box>
