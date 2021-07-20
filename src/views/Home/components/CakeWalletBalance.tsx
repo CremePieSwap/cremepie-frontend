@@ -27,8 +27,8 @@ const CakeWalletBalance = () => {
 
   return (
     <>
-      <CardValue value={getBalanceNumber(cakeBalance)} decimals={4} fontSize="24px" lineHeight="36px" />
-      {cakePriceBusd.gt(0) ? <CardBusdValue value={busdBalance} /> : <br />}
+      <CardValue value={getBalanceNumber(cakeBalance)} decimals={4} lineHeight="1.5" fontSize="30px" color="#50E3C2" fontFamily='SFPro900' />
+      {cakePriceBusd.gt(0) ? <CardBusdValue value={busdBalance} lineHeight="16px" fontSize="14px" color="#5B5A99" fontFamily='SFPro500'/> : <br />}
     </>
   )
 }

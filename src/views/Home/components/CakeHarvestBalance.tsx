@@ -11,7 +11,6 @@ import CardValue from './CardValue'
 import CardBusdValue from './CardBusdValue'
 
 const Block = styled.div`
-  margin-bottom: 24px;
 `
 
 interface CakeHarvestBalanceProps {
@@ -41,8 +40,8 @@ const CakeHarvestBalance: React.FC<CakeHarvestBalanceProps> = ({ farmsWithBalanc
 
   return (
     <Block>
-      <CardValue value={earningsSum} lineHeight="1.5" />
-      {cakePriceBusd.gt(0) && <CardBusdValue value={earningsBusd} />}
+      <CardValue value={earningsSum} lineHeight="1.5" fontSize="30px" color="#50E3C2" fontFamily='SFPro900' />
+      {cakePriceBusd.gt(0) && <CardBusdValue value={earningsBusd} lineHeight="16px" fontSize="14px" color="#5B5A99" fontFamily='SFPro500'/>}
     </Block>
   )
 }
