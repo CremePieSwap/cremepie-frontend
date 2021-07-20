@@ -11,30 +11,6 @@ import UnlockButton from 'components/UnlockButton'
 import CakeHarvestBalance from './CakeHarvestBalance'
 import CakeWalletBalance from './CakeWalletBalance'
 
-const StyledFarmStakingCard = styled(Card)`
-  background-image: url('/images/cake-bg.svg');
-  background-repeat: no-repeat;
-  background-position: top right;
-  min-height: 376px;
-`
-
-const Block = styled.div`
-  margin-bottom: 16px;
-`
-
-const CardImage = styled.img`
-  margin-bottom: 16px;
-`
-
-const Label = styled.div`
-  color: ${({ theme }) => theme.colors.textSubtle};
-  font-size: 14px;
-`
-
-const Actions = styled.div`
-  margin-top: 24px;
-`
-
 const FarmedStakingCard = () => {
   const [pendingTx, setPendingTx] = useState(false)
   const { account } = useWeb3React()
@@ -59,41 +35,75 @@ const FarmedStakingCard = () => {
   }, [balancesWithValue, masterChefContract, toastError, t])
 
   return (
-    <StyledFarmStakingCard>
-      <CardBody>
-        <Heading scale="xl" mb="24px">
-          {t('Farms & Staking')}
-        </Heading>
-        <CardImage src="/images/cake.svg" alt="cake logo" width={64} height={64} />
-        <Block>
-          <Label>{t('CAKE to Harvest')}:</Label>
-          <CakeHarvestBalance farmsWithBalance={balancesWithValue} />
-        </Block>
-        <Block>
-          <Label>{t('CAKE in Wallet')}:</Label>
-          <CakeWalletBalance />
-        </Block>
-        <Actions>
-          {account ? (
-            <Button
-              id="harvest-all"
-              disabled={balancesWithValue.length <= 0 || pendingTx}
-              onClick={harvestAllFarms}
-              width="100%"
-            >
-              {pendingTx
-                ? t('Collecting CAKE')
-                : t('Harvest all (%count%)', {
-                    count: balancesWithValue.length,
-                  })}
-            </Button>
-          ) : (
-            <UnlockButton width="100%" />
-          )}
-        </Actions>
-      </CardBody>
-    </StyledFarmStakingCard>
+    <Block>
+      <BlockTitle>Farms & Staking</BlockTitle>
+      <img src='/images/mini_creme_pie.svg' alt="Mini pie" />
+      <BlockContent>
+        <Label>CPIE To Harvest</Label>
+        <CakeHarvestBalance farmsWithBalance={balancesWithValue} />
+      </BlockContent>
+      <BlockContent style={{ margin: '20px 0' }}>
+        <Label>CPIE In Wallet</Label>
+        <CakeWalletBalance />
+      </BlockContent>
+      {account ? (
+        <Button
+          id="harvest-all"
+          disabled={balancesWithValue.length <= 0 || pendingTx}
+          onClick={harvestAllFarms}
+          width="100%"
+        >
+          {pendingTx
+            ? t('Collecting')
+            : t('Harvest all (%count%)', {
+                count: balancesWithValue.length,
+              })}
+        </Button>
+      ) : (
+        <UnlockButton width="100%" />
+      )}
+      <PieBackground>
+        <img src='/images/background_pie.svg' alt="pie" />
+      </PieBackground>
+    </Block>
   )
 }
-
 export default FarmedStakingCard
+
+const Block = styled.div`
+  width: 350px;
+  padding: 20px 30px;
+  background: #FFFFFF;
+  box-shadow: 1px 1px 1px rgba(23, 18, 43, 0.1);
+  backdrop-filter: blur(3px);
+  border-radius: 15px;
+  text-align: left;
+  position: relative;
+  height: 100%;
+  margin-bottom: 30px;
+  @media (max-width: 500px) {
+    margin: 0 auto 20px;
+    width: 100%;
+  };
+`
+const BlockTitle = styled.div`
+  font-size: 30px;
+  line-height: 40px;
+  font-weight: 600;
+  color: #50E3C2;
+  margin-bottom: 10px;
+`
+const BlockContent = styled.div`
+`
+const Label = styled.div`
+  font-size: 14px;
+  line-height: 16px;
+  color: #50E3C2;
+`
+const PieBackground = styled.div`
+  position: absolute;
+  bottom: 45px;
+  right: 0;
+  opacity: 0.2;
+`
+
