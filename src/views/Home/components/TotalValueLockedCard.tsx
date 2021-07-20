@@ -34,7 +34,7 @@ const TotalValueLockedCard = () => {
     // </StyledTotalValueLockedCard>
     <Block className="type-4">
       <Subtitle4>Total Value Locked (TVL)</Subtitle4>
-      <Title4>$1,306,969</Title4>
+      <Title4>$1,379,792</Title4>
       <Description4>Across all LPs and Cream Pool</Description4>
     </Block>
   )
