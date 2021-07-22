@@ -90,6 +90,16 @@ const farms: FarmConfig[] = [
     token: tokens.usdc,
     quoteToken: tokens.wmatic,
   },
+  {
+    pid: 7,
+    lpSymbol: 'MATIC-USDT LP',
+    lpAddresses: {
+      97: '',
+      137: '0x0B23bd7D56160272049C6b33e2d4D575B6bE46ae',
+    },
+    token: tokens.usdt,
+    quoteToken: tokens.wmatic,
+  },
   // *
   //  * V3 by order of release (some may be out of PID order due to multiplier boost)
 
