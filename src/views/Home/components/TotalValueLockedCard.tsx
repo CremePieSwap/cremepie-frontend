@@ -6,7 +6,7 @@ import { useGetStats } from 'hooks/api'
 
 const TotalValueLockedCard = () => {
   const { t } = useTranslation()
-  const data = 4990675
+  const data = 5205514
   const tvl = data.toLocaleString('en-US')
   // const tvl = data ? data.tvl.toLocaleString('en-US', { maximumFractionDigits: 0 }) : null
   return (
