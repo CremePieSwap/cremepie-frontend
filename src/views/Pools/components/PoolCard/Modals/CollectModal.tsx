@@ -11,6 +11,7 @@ import {
   HelpIcon,
   useTooltip,
 } from '@cremepie/uikit'
+import BigNumber from 'bignumber.js'
 import { useTranslation } from 'contexts/Localization'
 import useTheme from 'hooks/useTheme'
 import useToast from 'hooks/useToast'
@@ -60,7 +61,8 @@ const CollectModal: React.FC<CollectModalProps> = ({
     // compounding
     if (shouldCompound) {
       try {
-        await onStake(fullBalance, earningToken.decimals)
+        const compoundBalance = new BigNumber(fullBalance).multipliedBy(94).div(100).toString()
+        await onStake(compoundBalance, earningToken.decimals)
         toastSuccess(
           `${t('Compounded')}!`,
           t('Your %symbol% earnings have been re-invested into the pool!', { symbol: earningToken.symbol }),
