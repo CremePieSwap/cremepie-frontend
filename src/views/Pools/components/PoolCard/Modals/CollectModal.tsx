@@ -61,7 +61,7 @@ const CollectModal: React.FC<CollectModalProps> = ({
     // compounding
     if (shouldCompound) {
       try {
-        const compoundBalance = new BigNumber(fullBalance).multipliedBy(94).div(100).toString()
+        const compoundBalance = new BigNumber(fullBalance).multipliedBy(94).div(100).toFixed(0)
         await onStake(compoundBalance, earningToken.decimals)
         toastSuccess(
           `${t('Compounded')}!`,
