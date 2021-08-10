@@ -19,7 +19,7 @@ const EarnAssetCard = () => {
 
   return (
     <Block className='type-1'>
-      <NavLink exact activeClassName="active" to="/syrup" id="pool-cta">
+      <NavLink exact activeClassName="active" to="/pools" id="pool-cta">
         <Subtitle color="#5B5A99">
           Earn
         </Subtitle>
