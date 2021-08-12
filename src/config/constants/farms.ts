@@ -100,6 +100,47 @@ const farms: FarmConfig[] = [
     token: tokens.usdt,
     quoteToken: tokens.wmatic,
   },
+  {
+    pid: 8,
+    lpSymbol: 'WETH-USDC LP',
+    lpAddresses: {
+      97: '',
+      137: '0xac0ed4cceb1ae6c507b9925ac05dcfe8692ff8c0',
+    },
+    token: tokens.eth,
+    quoteToken: tokens.usdc,
+  },
+  {
+    pid: 9,
+    lpSymbol: 'MATIC-WETH LP',
+    lpAddresses: {
+      97: '',
+      137: '0x8cf24da57eb6f5881c13b14aeb48c49df6b034a6',
+    },
+    token: tokens.wmatic,
+    quoteToken: tokens.eth,
+  },
+  {
+    pid: 10,
+    lpSymbol: 'MATIC-USDC LP',
+    lpAddresses: {
+      97: '',
+      137: '0x29a92b95be45d5bdd638b749798f0fee107fdbc7',
+    },
+    token: tokens.wmatic,
+    quoteToken: tokens.usdc,
+  },
+  {
+    pid: 11,
+    lpSymbol: 'CPIE-WETH LP',
+    lpAddresses: {
+      97: '',
+      137: '0xfd1b6a2d94c1705d514095230e71455e15d28b07',
+    },
+    token: tokens.cpie,
+    quoteToken: tokens.eth,
+  },
+
   // *
   //  * V3 by order of release (some may be out of PID order due to multiplier boost)
 
