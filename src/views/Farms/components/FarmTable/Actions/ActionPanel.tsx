@@ -218,7 +218,7 @@ const ActionPanel: React.FunctionComponent<ActionPanelProps> = ({
         <InfoContainer>
           {isActive && (
             <StakeContainer>
-              <StyledLinkExternal href={`https://swap.pancakeswap.finance/#/add/${liquidityUrlPathParts}`}>
+              <StyledLinkExternal href={`https://swap.cremepieswap.finance/#/add/${liquidityUrlPathParts}`}>
                 {t('Get %symbol%', { symbol: lpLabel })}
               </StyledLinkExternal>
             </StakeContainer>

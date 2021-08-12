@@ -36,9 +36,9 @@ const config: (t: ContextApi['t']) => MenuEntry[] = (t) => [
     href: '/pools',
   },
   {
-    label: t('Bridge'),
-    icon: 'BridgeIcon',
-    href: 'https://bridge.cremepieswap.finance/',
+    label: t('Lottery'),
+    icon: 'LotteryIcon',
+    href: 'https://lottery.cremepieswap.finance/',
   },
   {
     label: t('Docs'),
