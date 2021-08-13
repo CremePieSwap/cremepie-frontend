@@ -1,18 +1,53 @@
-import React from 'react'
+/* eslint-disable */
+import React, {useEffect, useState, useMemo} from 'react'
 import styled from 'styled-components'
+import BigNumber from 'bignumber.js'
+import { useWeb3React } from '@web3-react/core'
 import { Card, CardBody, Heading, Skeleton, Text } from '@cremepie/uikit'
 import { useTranslation } from 'contexts/Localization'
 import { useGetStats } from 'hooks/api'
+import { useFarms, usePools } from 'state/hooks'
+import { getBalanceNumber } from 'utils/formatBalance'
 
 const TotalValueLockedCard = () => {
+  const { data: farmsLP } = useFarms()
+  const [ tvle, setTVLE ] = useState(Number(0))
+
+  const { account } = useWeb3React()
+  const { pools: poolsWithoutAutoVault } = usePools(account)
+
+  const pools = useMemo(() => {
+    const cakePool = poolsWithoutAutoVault.find((pool) => pool.sousId === 0)
+    const cakeAutoVault = { ...cakePool, isAutoVault: true }
+    return [cakeAutoVault, ...poolsWithoutAutoVault]
+  }, [poolsWithoutAutoVault])
+
+  useEffect(() => {
+    let liquidity: Array<String> = []
+    if (farmsLP) {
+      farmsLP.forEach((farm) => {
+        if (farm) {
+          if (farm.pid !== 0) {
+            const totalLiquidity = new BigNumber(farm.lpTotalInQuoteToken).times(farm.quoteToken.busdPrice)
+            liquidity.push(totalLiquidity.toFixed(0))
+          }
+        }
+      })
+    }
+    let total : number = 0;
+    liquidity.forEach((e) => {
+      total += Number(e)
+    })
+    const totalStakeDollar = getBalanceNumber(pools[0].totalStaked.multipliedBy(pools[0].earningTokenPrice), pools[0].stakingToken.decimals).toFixed(0)
+    setTVLE(total + Number(totalStakeDollar))
+  }, [farmsLP])
+
   const { t } = useTranslation()
-  const data = 3691372
-  const tvl = data.toLocaleString('en-US')
-  // const tvl = data ? data.tvl.toLocaleString('en-US', { maximumFractionDigits: 0 }) : null
+  const tvl = tvle.toLocaleString('en-US')
   return (
     <Block className="type-4">
       <Subtitle4>Total Value Locked (TVL)</Subtitle4>
-      {data ? (
+      {tvle ? (
         <>
           <Title4>{`$${tvl}`}</Title4>
         </>
