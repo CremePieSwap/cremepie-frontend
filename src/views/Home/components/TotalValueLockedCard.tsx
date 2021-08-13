@@ -6,10 +6,14 @@ import { useWeb3React } from '@web3-react/core'
 import { Card, CardBody, Heading, Skeleton, Text } from '@cremepie/uikit'
 import { useTranslation } from 'contexts/Localization'
 import { useGetStats } from 'hooks/api'
-import { useFarms, usePools } from 'state/hooks'
+import { useFarms, usePools, useFetchPublicPoolsData, usePollFarmsData, useFetchCakeVault } from 'state/hooks'
 import { getBalanceNumber } from 'utils/formatBalance'
 
 const TotalValueLockedCard = () => {
+  usePollFarmsData()
+  useFetchCakeVault()
+  useFetchPublicPoolsData()
+
   const { data: farmsLP } = useFarms()
   const [ tvle, setTVLE ] = useState(Number(0))
 
