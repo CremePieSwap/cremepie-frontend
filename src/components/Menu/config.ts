@@ -45,6 +45,11 @@ const config: (t: ContextApi['t']) => MenuEntry[] = (t) => [
     icon: 'DocsIcon',
     href: 'https://docs.cremepieswap.finance/',
   },
+  {
+    label: t('Info'),
+    icon: 'InfoIcon',
+    href: 'https://info.cremepieswap.finance/',
+  },
   // {
   //   label: t('Prediction (BETA)'),
   //   icon: 'PredictionsIcon',
