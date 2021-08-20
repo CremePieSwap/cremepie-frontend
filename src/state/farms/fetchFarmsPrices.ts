@@ -12,7 +12,7 @@ const getFarmFromTokenSymbol = (farms: Farm[], tokenSymbol: string, preferredQuo
 const getFarmBaseTokenPrice = (farm: Farm, quoteTokenFarm: Farm, bnbPriceBusd: BigNumber): BigNumber => {
   const hasTokenPriceVsQuote = Boolean(farm.tokenPriceVsQuote)
 
-  if (farm.quoteToken.symbol === 'USDC' || farm.quoteToken.symbol === 'USDT') {
+  if (farm.quoteToken.symbol === 'USDC' || farm.quoteToken.symbol === 'USDT' || farm.quoteToken.symbol === 'DAI') {
     return hasTokenPriceVsQuote ? new BigNumber(farm.tokenPriceVsQuote) : BIG_ZERO
   }
 
@@ -37,7 +37,7 @@ const getFarmBaseTokenPrice = (farm: Farm, quoteTokenFarm: Farm, bnbPriceBusd: B
       : BIG_ZERO
   }
 
-  if (quoteTokenFarm.quoteToken.symbol === 'USDC' || farm.quoteToken.symbol === 'USDT') {
+  if (quoteTokenFarm.quoteToken.symbol === 'USDC' || farm.quoteToken.symbol === 'USDT' || farm.quoteToken.symbol === 'DAI') {
     const quoteTokenInBusd = quoteTokenFarm.tokenPriceVsQuote
     return hasTokenPriceVsQuote && quoteTokenInBusd
       ? new BigNumber(farm.tokenPriceVsQuote).times(quoteTokenInBusd)
@@ -49,7 +49,7 @@ const getFarmBaseTokenPrice = (farm: Farm, quoteTokenFarm: Farm, bnbPriceBusd: B
 }
 
 const getFarmQuoteTokenPrice = (farm: Farm, quoteTokenFarm: Farm, bnbPriceBusd: BigNumber): BigNumber => {
-  if (farm.quoteToken.symbol === 'USDC' || farm.quoteToken.symbol === 'USDT') {
+  if (farm.quoteToken.symbol === 'USDC' || farm.quoteToken.symbol === 'USDT' || farm.quoteToken.symbol === 'DAI') {
     return BIG_ONE
   }
 
@@ -65,7 +65,7 @@ const getFarmQuoteTokenPrice = (farm: Farm, quoteTokenFarm: Farm, bnbPriceBusd: 
     return quoteTokenFarm.tokenPriceVsQuote ? bnbPriceBusd.times(quoteTokenFarm.tokenPriceVsQuote) : BIG_ZERO
   }
 
-  if (quoteTokenFarm.quoteToken.symbol === 'USDC' || farm.quoteToken.symbol === 'USDT') {
+  if (quoteTokenFarm.quoteToken.symbol === 'USDC' || farm.quoteToken.symbol === 'USDT' || farm.quoteToken.symbol === 'DAI') {
     return quoteTokenFarm.tokenPriceVsQuote ? new BigNumber(quoteTokenFarm.tokenPriceVsQuote) : BIG_ZERO
   }
 

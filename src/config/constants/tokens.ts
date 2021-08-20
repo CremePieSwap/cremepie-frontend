@@ -805,6 +805,7 @@ const tokens = {
     address: {
       56: '0x1AF3F329e8BE154074D8769D1FFa4eE058B1DBc3',
       97: '',
+      137: '0x8f3cf7ad23cd3cadbd9735aff958023239c6a063',
     },
     decimals: 18,
     projectLink: 'https://www.makerdao.com/',
@@ -869,6 +870,14 @@ const tokens = {
       97: '0xE02dF9e3e622DeBdD69fb838bB799E3F168902c5',
     },
     decimals: 18,
+    projectLink: 'https://bitcoin.org/',
+  },
+  wbtc: {
+    symbol: 'WBTC',
+    address: {
+      137: '0x1BFD67037B42Cf73acF2047067bd4F2C47D9BfD6'
+    },
+    decimals: 8,
     projectLink: 'https://bitcoin.org/',
   },
   xrp: {
