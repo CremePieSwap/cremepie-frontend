@@ -54,7 +54,7 @@ const CakeStats = () => {
       </Subtitle5>
       <Subtitle5>
         <div>Total CPIE Burned</div>
-        <div>104,952,576</div>
+        <div>157,984,612</div>
       </Subtitle5>
       <Subtitle5>
         <div>New CPIE per block</div>
