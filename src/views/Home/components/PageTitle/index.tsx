@@ -34,7 +34,7 @@ export default function PageTitle() {
     <StylePageTitle>
       <Text>
         <Title>
-          CremePie Swap
+          CremePieSwap
         </Title>
         <Subtitle>The #1 AMM and yield farm on Polygon.</Subtitle>
       </Text>
