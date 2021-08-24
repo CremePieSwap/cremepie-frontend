@@ -226,13 +226,13 @@ const Pools: React.FC = () => {
       </PageHeader>
       <Page>
         <PoolControls justifyContent="flex-end">
-          {/* <PoolTabButtons
+          <PoolTabButtons
             stakedOnly={stakedOnly}
             setStakedOnly={setStakedOnly}
             hasStakeInFinishedPools={hasStakeInFinishedPools}
             viewMode={viewMode}
             setViewMode={setViewMode}
-          /> */}
+          />
           {/* <SearchSortContainer>
             <Flex flexDirection="column" width="50%">
               <Text fontSize="12px" bold color="textSubtle" textTransform="uppercase">

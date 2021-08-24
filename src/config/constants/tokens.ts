@@ -57,6 +57,7 @@ const tokens = {
     address: {
       56: '0x03fF0ff224f904be3118461335064bB48Df47938',
       97: '',
+      137: '0x2704a1d4cd3f51a01e8ef9283e8a8ab84e432be4',
     },
     decimals: 18,
     projectLink: 'https://www.harmony.one/',
