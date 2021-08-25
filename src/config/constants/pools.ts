@@ -24,7 +24,7 @@ const pools: PoolConfig[] = [
     contractAddress: {
       97: '',
       56: '0xe595456846155e23b24cc9cbee910ee97027db6d',
-      137: '0x13f2d9656214132426b70623265b5e1b1b49713a',
+      137: '0xbb207cf15d79bf245feb13ee8d2856bb2aa2c3a2',
     },
     poolCategory: PoolCategory.CORE,
     harvest: true,
