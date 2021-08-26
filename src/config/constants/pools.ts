@@ -32,7 +32,7 @@ const pools: PoolConfig[] = [
     tokenPerBlock: '0.14466',
   },
   {
-    sousId: 1,
+    sousId: 2,
     stakingToken: tokens.quokk,
     earningToken: tokens.quokk,
     contractAddress: {
@@ -42,7 +42,7 @@ const pools: PoolConfig[] = [
     },
     poolCategory: PoolCategory.CORE,
     harvest: true,
-    sortOrder: 2,
+    sortOrder: 3,
     tokenPerBlock: '0.096',
   },
   // {
