@@ -28,6 +28,14 @@ const tokens = {
     decimals: 18,
     projectLink: 'https://cremepieswap.finance/',
   },
+  quokk: {
+    symbol: 'QUOKK',
+    address: {
+      137: '0x9469603f3efbcf17e4a5868d81c701bdbd222555',
+    },
+    decimals: 18,
+    projectLink: 'https://cremepieswap.finance/',
+  },
   mhd: {
     symbol: 'MHD',
     address: {

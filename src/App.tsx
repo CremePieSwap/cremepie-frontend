@@ -59,6 +59,12 @@ const App: React.FC = () => {
             <Route path="/pools">
               <Pools />
             </Route>
+            <Route path="/ifo">
+              <Ifos />
+            </Route>
+            <Route path="/profile">
+              <Profile />
+            </Route>
             {/* 404 */}
             <Route component={NotFound} />
           </Switch>

@@ -20,16 +20,30 @@ const pools: PoolConfig[] = [
   {
     sousId: 1,
     stakingToken: tokens.cpie,
-    earningToken: tokens.uni,
+    earningToken: tokens.quokk,
     contractAddress: {
       97: '',
       56: '0xe595456846155e23b24cc9cbee910ee97027db6d',
-      137: '0xbb207cf15d79bf245feb13ee8d2856bb2aa2c3a2',
+      137: '0x7E50DF12551E3892DA267D980d555B775aEE649a',
     },
     poolCategory: PoolCategory.CORE,
     harvest: true,
     sortOrder: 2,
-    tokenPerBlock: '0.1',
+    tokenPerBlock: '0.0289',
+  },
+  {
+    sousId: 1,
+    stakingToken: tokens.quokk,
+    earningToken: tokens.quokk,
+    contractAddress: {
+      97: '',
+      56: '0xe595456846155e23b24cc9cbee910ee97027db6d',
+      137: '0xcdddaef4423be899412cb288471d5d488aa6b8a9',
+    },
+    poolCategory: PoolCategory.CORE,
+    harvest: true,
+    sortOrder: 2,
+    tokenPerBlock: '0.01928',
   },
   // {
   //   sousId: 194,
