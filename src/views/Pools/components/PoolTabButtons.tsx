@@ -43,7 +43,6 @@ const PoolTabButtons = ({ stakedOnly, setStakedOnly, hasStakeInFinishedPools, vi
     return (
       <Flex flexDirection="column" alignItems="flex-start" mb="24px">
         <Flex width="100%" justifyContent="space-between">
-          {viewModeToggle}
           {liveOrFinishedSwitch}
         </Flex>
         {stakedOnlySwitch}
@@ -57,7 +56,6 @@ const PoolTabButtons = ({ stakedOnly, setStakedOnly, hasStakeInFinishedPools, vi
       justifyContent={['space-around', 'space-around', 'flex-start']}
       mb={['24px', '24px', '24px', '0px']}
     >
-      {viewModeToggle}
       {liveOrFinishedSwitch}
       {stakedOnlySwitch}
     </Flex>
