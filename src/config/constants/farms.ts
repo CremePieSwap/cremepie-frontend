@@ -180,6 +180,16 @@ const farms: FarmConfig[] = [
     token: tokens.wbtc,
     quoteToken: tokens.eth,
   },
+  {
+    pid: 17,
+    lpSymbol: 'QUOKK-USDC LP',
+    lpAddresses: {
+      97: '',
+      137: '0xbf79de8d42555256ff27fbb8baa9d1e311cc67a7',
+    },
+    token: tokens.quokk,
+    quoteToken: tokens.usdc,
+  },
 ]
 
 export default farms
