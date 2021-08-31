@@ -21,6 +21,10 @@ const usePersistState = (initialValue: any, userOptions: UsePersistStateOptions)
     try {
       const valueFromLS = localStorage.getItem(localStorageKey)
 
+      if (localStorageKey === 'pancake_farm_view') {
+        return initialValue
+      }
+
       return valueFromLS ? hydrate(JSON.parse(valueFromLS)) : initialValue
     } catch (error) {
       return initialValue
