@@ -81,12 +81,12 @@ const IfoCardTokens: React.FC<IfoCardTokensProps> = ({
     if (isLoading) {
       return <SkeletonCardTokens />
     }
-    if (account && !hasProfile) {
-      if (publicIfoData.status === 'finished') {
-        return <Text textAlign="center">{t('Activate PancakeSwap Profile to take part in next IFO‘s!')}</Text>
-      }
-      return <Text textAlign="center">{t('You need an active PancakeSwap Profile to take part in an IFO!')}</Text>
-    }
+    // if (account && !hasProfile) {
+    //   if (publicIfoData.status === 'finished') {
+    //     return <Text textAlign="center">{t('Activate PancakeSwap Profile to take part in next IFO‘s!')}</Text>
+    //   }
+    //   return <Text textAlign="center">{t('You need an active PancakeSwap Profile to take part in an IFO!')}</Text>
+    // }
     if (publicIfoData.status === 'coming_soon') {
       return (
         <>
@@ -114,7 +114,7 @@ const IfoCardTokens: React.FC<IfoCardTokensProps> = ({
     if (publicIfoData.status === 'live') {
       return (
         <>
-          <TokenSection img="/images/farms/cake-bnb.svg" mb="24px">
+          <TokenSection img="/images/cpie-usdt.png" mb="28px">
             <Label>{t('Your %symbol% committed', { symbol: currency.symbol })}</Label>
             <Value>{getBalanceNumber(userPoolCharacteristics.amountTokenCommittedInLP, currency.decimals)}</Value>
             <PercentageOfTotal
@@ -137,7 +137,7 @@ const IfoCardTokens: React.FC<IfoCardTokensProps> = ({
         </Flex>
       ) : (
         <>
-          <TokenSection img="/images/farms/cake-bnb.svg" mb="24px">
+          <TokenSection img="/images/cpie-usdt.png" mb="28px">
             <Label>
               {t(hasClaimed ? 'Your %symbol% RECLAIMED' : 'Your %symbol% TO RECLAIM', { symbol: currency.symbol })}
             </Label>

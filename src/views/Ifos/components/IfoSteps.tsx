@@ -35,7 +35,7 @@ const IfoSteps: React.FC<Props> = ({ ifo, walletIfoData }) => {
   const { t } = useTranslation()
   const { balance } = useTokenBalance(getAddress(ifo.currency.address))
   const stepsValidationStatus = [
-    hasProfile,
+    // hasProfile,
     balance.isGreaterThan(0),
     poolBasic.amountTokenCommittedInLP.isGreaterThan(0) || poolUnlimited.amountTokenCommittedInLP.isGreaterThan(0),
     poolBasic.hasClaimed || poolUnlimited.hasClaimed,
@@ -52,27 +52,27 @@ const IfoSteps: React.FC<Props> = ({ ifo, walletIfoData }) => {
   const renderCardBody = (step: number) => {
     const isStepValid = stepsValidationStatus[step]
     switch (step) {
+      // case 0:
+      //   return (
+      //     <CardBody>
+      //       <Heading as="h4" color="secondary" mb="16px">
+      //         {t('Activate your Profile')}
+      //       </Heading>
+      //       <Text color="textSubtle" small mb="16px">
+      //         {t('You’ll need an active PancakeSwap Profile to take part in an IFO!')}
+      //       </Text>
+      //       {isStepValid ? (
+      //         <Text color="success" bold>
+      //           {t('Profile Active!')}
+      //         </Text>
+      //       ) : (
+      //         <Button as={Link} href="/profile">
+      //           {t('Activate your Profile')}
+      //         </Button>
+      //       )}
+      //     </CardBody>
+      //   )
       case 0:
-        return (
-          <CardBody>
-            <Heading as="h4" color="secondary" mb="16px">
-              {t('Activate your Profile')}
-            </Heading>
-            <Text color="textSubtle" small mb="16px">
-              {t('You’ll need an active PancakeSwap Profile to take part in an IFO!')}
-            </Text>
-            {isStepValid ? (
-              <Text color="success" bold>
-                {t('Profile Active!')}
-              </Text>
-            ) : (
-              <Button as={Link} href="/profile">
-                {t('Activate your Profile')}
-              </Button>
-            )}
-          </CardBody>
-        )
-      case 1:
         return (
           <CardBody>
             <Heading as="h4" color="secondary" mb="16px">
@@ -93,7 +93,7 @@ const IfoSteps: React.FC<Props> = ({ ifo, walletIfoData }) => {
             </Button>
           </CardBody>
         )
-      case 2:
+      case 1:
         return (
           <CardBody>
             <Heading as="h4" color="secondary" mb="16px">
@@ -105,7 +105,7 @@ const IfoSteps: React.FC<Props> = ({ ifo, walletIfoData }) => {
             </Text>
           </CardBody>
         )
-      case 3:
+      case 2:
         return (
           <CardBody>
             <Heading as="h4" color="secondary" mb="16px">
