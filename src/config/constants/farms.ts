@@ -190,6 +190,16 @@ const farms: FarmConfig[] = [
     token: tokens.quokk,
     quoteToken: tokens.usdc,
   },
+  {
+    pid: 18,
+    lpSymbol: 'NALIS-USDT LP',
+    lpAddresses: {
+      97: '',
+      137: '0x227029f492d12c20f5b9b7933dd19292451d2976',
+    },
+    token: tokens.nalis,
+    quoteToken: tokens.usdt,
+  },
 ]
 
 export default farms
