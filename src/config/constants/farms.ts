@@ -180,6 +180,7 @@ const farms: FarmConfig[] = [
     token: tokens.wbtc,
     quoteToken: tokens.eth,
   },
+  // pool only get price
   {
     pid: 17,
     lpSymbol: 'QUOKK-USDC LP',
@@ -190,12 +191,13 @@ const farms: FarmConfig[] = [
     token: tokens.quokk,
     quoteToken: tokens.usdc,
   },
+  // pool only get price
   {
-    pid: 18,
+    pid: 19,
     lpSymbol: 'NALIS-USDT LP',
     lpAddresses: {
       97: '',
-      137: '0x227029f492d12c20f5b9b7933dd19292451d2976',
+      137: '0xff50a77412997fc86e78178a4b47000b9225ffd9',
     },
     token: tokens.nalis,
     quoteToken: tokens.usdt,
