@@ -34,7 +34,7 @@ const tokens = {
       137: '0x9469603f3efbcf17e4a5868d81c701bdbd222555',
     },
     decimals: 18,
-    projectLink: 'https://cremepieswap.finance/',
+    projectLink: 'https://www.quokka.finance/',
   },
   mhd: {
     symbol: 'MHD',
@@ -871,6 +871,14 @@ const tokens = {
     },
     decimals: 6,
     projectLink: 'https://tether.to/',
+  },
+  nalis: {
+    symbol: 'NALIS',
+    address: {
+      137: '0x04f2e3ec0642e501220f32fcd9e26e77924929a9',
+    },
+    decimals: 18,
+    projectLink: 'https://koaladefi.finance/',
   },
   btcb: {
     symbol: 'BTCB',
