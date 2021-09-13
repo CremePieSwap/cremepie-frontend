@@ -22,7 +22,7 @@ const HowToBuyCard = () => {
         <ButtonRow>
             <Button>
             <a
-                href="https://docs.cremepieswap.finance/instructions/how-to-trade-cpie-on-cremepieswap"
+                href="https://docs.cremepieswapfinance.com/instructions/how-to-trade-cpie-on-cremepieswap"
                 target="_blank"
                 rel="noreferrer"
             >

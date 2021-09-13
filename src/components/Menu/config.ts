@@ -13,11 +13,11 @@ const config: (t: ContextApi['t']) => MenuEntry[] = (t) => [
     items: [
       {
         label: t('Exchange'),
-        href: 'https://swap.cremepieswap.finance/#/swap',
+        href: 'https://swap.cremepieswapfinance.com/#/swap',
       },
       {
         label: t('Liquidity'),
-        href: 'https://swap.cremepieswap.finance/#/pool',
+        href: 'https://swap.cremepieswapfinance.com/#/pool',
       },
       // {
       //   label: t('LP Migration'),
@@ -43,17 +43,17 @@ const config: (t: ContextApi['t']) => MenuEntry[] = (t) => [
   {
     label: t('Lottery'),
     icon: 'LotteryIcon',
-    href: 'https://lottery.cremepieswap.finance/',
+    href: 'https://lottery.cremepieswapfinance.com/',
   },
   {
     label: t('Docs'),
     icon: 'DocsIcon',
-    href: 'https://docs.cremepieswap.finance/',
+    href: 'https://docs.cremepieswapfinance.com/',
   },
   {
     label: t('Info'),
     icon: 'InfoIcon',
-    href: 'https://info.cremepieswap.finance/',
+    href: 'https://info.cremepieswapfinance.com/',
   },
   // {
   //   label: t('Prediction (BETA)'),

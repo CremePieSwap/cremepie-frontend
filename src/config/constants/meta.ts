@@ -5,7 +5,7 @@ export const DEFAULT_META: PageMeta = {
   title: 'CremePieSwap',
   description:
     'The most popular AMM on Polygon by user count! Earn CPIE through yield farming or win it in the Lottery, then stake it in Cream Pools to earn more tokens! Initial Farm Offerings (new token launch model pioneered by CremePieSwap), NFTs, and more, on a platform you can trust.',
-  image: 'https://cremepieswap.finance/token-sale-timeline.jpg',
+  image: 'https://cremepieswapfinance.com/token-sale-timeline.jpg',
 }
 
 export const getCustomMeta = (path: string, t: ContextApi['t']): PageMeta => {
