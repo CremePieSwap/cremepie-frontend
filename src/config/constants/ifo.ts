@@ -11,20 +11,20 @@ const cpieUsdtToken: Token = {
 const ifos: Ifo[] = [
   {
     id: 'kalmar',
-    address: '0x609516Af4C0637d68247EF8F6D529997EBe223B5',
+    address: '0x90baD24566ae362a455D48B29937564A2525D0a8',
     isActive: true,
     name: 'UNI (UNI)',
     poolBasic: {
-      saleAmount: '1 UNI',
-      raiseAmount: '$1',
-      cakeToBurn: '$0.5',
-      distributionRatio: 0.5,
+      saleAmount: '0.5 UNI',
+      raiseAmount: '$0.5',
+      cakeToBurn: '$0.25',
+      distributionRatio: 0.33,
     },
     poolUnlimited: {
       saleAmount: '1 UNI',
       raiseAmount: '$1',
       cakeToBurn: '$0.5',
-      distributionRatio: 0.5,
+      distributionRatio: 0.77,
     },
     currency: cpieUsdtToken,
     token: tokens.uni,
@@ -36,7 +36,7 @@ const ifos: Ifo[] = [
   },
   {
     id: 'kalmar',
-    address: '0x31f1f681de9b596afa219972b110c97281cc1873',
+    address: '0x609516Af4C0637d68247EF8F6D529997EBe223B5',
     isActive: false,
     name: 'UNI (UNI)',
     poolBasic: {
