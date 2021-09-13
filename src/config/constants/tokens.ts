@@ -10,7 +10,7 @@ const tokens = {
       97: '0xa35062141Fa33BCA92Ce69FeD37D0E8908868AAe',
     },
     decimals: 18,
-    projectLink: 'https://cremepieswap.finance/',
+    projectLink: 'https://cremepieswapfinance.com/',
   },
   cpie: {
     symbol: 'CPIE',
@@ -18,7 +18,7 @@ const tokens = {
       137: '0xfad70FD116559914240faB82b0078c4E82a6a1B8',
     },
     decimals: 18,
-    projectLink: 'https://cremepieswap.finance/',
+    projectLink: 'https://cremepieswapfinance.com/',
   },
   dpie: {
     symbol: 'DPIE',
@@ -26,7 +26,7 @@ const tokens = {
       137: '0x44292d6dd3a00b9c0a80159a3ac0755dc037b525',
     },
     decimals: 18,
-    projectLink: 'https://cremepieswap.finance/',
+    projectLink: 'https://cremepieswapfinance.com/',
   },
   quokk: {
     symbol: 'QUOKK',
@@ -42,7 +42,7 @@ const tokens = {
       137: '0x85c715fd61cfcdcd22a5286b60a68e99da929dad',
     },
     decimals: 18,
-    projectLink: 'https://cremepieswap.finance/',
+    projectLink: 'https://cremepieswapfinance.com/',
   },
   uni: {
     symbol: 'UNI',
@@ -50,7 +50,7 @@ const tokens = {
       137: '0x2704a1d4cd3f51a01e8ef9283e8a8ab84e432be4',
     },
     decimals: 18,
-    projectLink: 'https://cremepieswap.finance/',
+    projectLink: 'https://cremepieswapfinance.com/',
   },
   wmatic: {
     symbol: 'wMATIC',
@@ -58,7 +58,7 @@ const tokens = {
       137: '0x0d500b1d8e8ef31e21c99d1db9a6444d3adf1270',
     },
     decimals: 18,
-    projectLink: 'https://cremepieswap.finance/',
+    projectLink: 'https://cremepieswapfinance.com/',
   },
   harmony: {
     symbol: 'ONE',
@@ -563,7 +563,7 @@ const tokens = {
       97: '0xae13d989dac2f0debff460ac112a837c89baa7cd',
     },
     decimals: 18,
-    projectLink: 'https://cremepieswap.finance/',
+    projectLink: 'https://cremepieswapfinance.com/',
   },
   blink: {
     symbol: 'BLINK',
@@ -708,7 +708,7 @@ const tokens = {
       137: '0xae2af68e963f714c28f7d3fb099078e7553f949a',
     },
     decimals: 18,
-    projectLink: 'https://cremepieswap.finance/',
+    projectLink: 'https://cremepieswapfinance.com/',
   },
   bifi: {
     symbol: 'BIFI',
