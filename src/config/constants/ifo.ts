@@ -11,7 +11,7 @@ const cpieUsdtToken: Token = {
 const ifos: Ifo[] = [
   {
     id: 'kalmar',
-    address: '0x90baD24566ae362a455D48B29937564A2525D0a8',
+    address: '0xe8a5463142b813908997d5fAA68b00e1f23b1a37',
     isActive: true,
     name: 'UNI (UNI)',
     poolBasic: {
