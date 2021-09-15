@@ -49,7 +49,8 @@ const ContributeModal: React.FC<Props> = ({
   const { account } = useWeb3React()
   const raisingTokenContract = useERC20(getAddress(currency.address))
   const { t } = useTranslation()
-  const valueWithTokenDecimals = new BigNumber(value).times(DEFAULT_TOKEN_DECIMAL)
+
+  const valueWithTokenDecimals = new BigNumber(value).times(DEFAULT_TOKEN_DECIMAL).decimalPlaces(0, 1)
 
   const { isApproving, isApproved, isConfirmed, isConfirming, handleApprove, handleConfirm } =
     useApproveConfirmTransaction({
