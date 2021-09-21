@@ -54,6 +54,8 @@ const pools: PoolConfig[] = [
     harvest: true,
     sortOrder: 4,
     tokenPerBlock: '0.152',
+    isFinished: true,
+    enableEmergencyWithdraw: true
   },
   // {
   //   sousId: 194,
