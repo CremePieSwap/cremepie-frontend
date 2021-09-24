@@ -49,7 +49,8 @@ const ContributeModal: React.FC<Props> = ({
   const { account } = useWeb3React()
   const raisingTokenContract = useERC20(getAddress(currency.address))
   const { t } = useTranslation()
-  const valueWithTokenDecimals = new BigNumber(value).times(DEFAULT_TOKEN_DECIMAL)
+
+  const valueWithTokenDecimals = new BigNumber(value).times(DEFAULT_TOKEN_DECIMAL).decimalPlaces(0, 1)
 
   const { isApproving, isApproved, isConfirmed, isConfirming, handleApprove, handleConfirm } =
     useApproveConfirmTransaction({
@@ -98,7 +99,7 @@ const ContributeModal: React.FC<Props> = ({
           <Text>{t('Commit')}:</Text>
           <Flex flexGrow={1} justifyContent="flex-end">
             <Image
-              src={`/images/farms/${currency.symbol.split(' ')[0].toLocaleLowerCase()}.svg`}
+              src={`/images/${currency.symbol.split(' ')[0].toLocaleLowerCase()}.png`}
               width={24}
               height={24}
             />

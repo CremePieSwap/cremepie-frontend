@@ -29,7 +29,6 @@ const config = [
   {
     title: 'How can I get an achievement for participating in the IFO?',
     description: [
-      'You need to contribute a minimum of about 10 USD worth of CAKE-BNB LP Tokens to either sale.',
       'You can contribute to one or both, it doesn’t matter: only your overall contribution is counted for the achievement.',
     ],
   },

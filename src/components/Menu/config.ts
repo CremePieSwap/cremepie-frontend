@@ -36,6 +36,11 @@ const config: (t: ContextApi['t']) => MenuEntry[] = (t) => [
     href: '/pools',
   },
   {
+    label: t('IFO'),
+    icon: 'IfoIcon',
+    href: '/ifo',
+  },
+  {
     label: t('Lottery'),
     icon: 'LotteryIcon',
     href: 'https://lottery.cremepieswapfinance.com/',
@@ -96,11 +101,6 @@ const config: (t: ContextApi['t']) => MenuEntry[] = (t) => [
   //   label: t('Info'),
   //   icon: 'InfoIcon',
   //   href: 'https://pancakeswap.info',
-  // },
-  // {
-  //   label: t('IFO'),
-  //   icon: 'IfoIcon',
-  //   href: '/ifo',
   // },
   // {
   //   label: t('More'),

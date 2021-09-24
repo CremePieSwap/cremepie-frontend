@@ -50,6 +50,7 @@ export const getTokenUriData = async (nftAddress: string, tokenId: number) => {
 }
 
 export const getNftByTokenId = async (nftAddress: string, tokenId: number): Promise<Nft | null> => {
+  console.log('uriData: ', nftAddress, tokenId)
   const uriData = await getTokenUriData(nftAddress, tokenId)
   const identifierKey = getIdentifierKeyFromAddress(nftAddress)
 
